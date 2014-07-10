@@ -84,3 +84,4 @@ production:
   database: web_template_production
   username: web_template
   password: <%= ENV['WEB_TEMPLATE_DATABASE_PASSWORD'] %>
+

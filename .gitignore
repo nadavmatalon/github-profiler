@@ -15,8 +15,11 @@
 /log/*.log
 /tmp
 
-# Ignore the secrets files
+# Ignore the secrets file
 /config/secrets.yml
+
+# Ignore the database file
+/config/database.yml
 
 # Ignore other unneeded files.
 doc/
