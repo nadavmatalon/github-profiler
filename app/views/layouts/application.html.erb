@@ -42,8 +42,11 @@
  
         <div>
             <% if user_signed_in? %>
-                <br/><span class="user-message"><%= "Welcom, #{current_user.email}" %>
-                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "log-out" %></span><br/>
+                <br/><span class="user-message"><%= "Welcom, #{current_user.username}" %>
+                <%= link_to "edit account", edit_user_registration_path, class: "sign-up" %></span>
+                <%= link_to "log out", destroy_user_session_path, method: :delete, class: "log-out" %></span><br/>
+
+
             <% else %>
                 <br/><span class="user-message"><%= "Welcom user, please" %> 
                 <%= link_to "sign in", new_user_session_path, class: "sign-up" %>

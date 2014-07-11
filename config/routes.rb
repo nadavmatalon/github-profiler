@@ -13,7 +13,9 @@ Rails.application.routes.draw do
         get "/sign_up" => "devise/registrations#new"
         get "/sign_in" => "devise/sessions#create"
         get "/sign_out" => "devise/sessions#destroy"
-    end
+        get "/password_edit" => "devise/passwords#edit"
+        get "/password_new" => "devise/passwords#new"
+            end
 
       # The priority is based upon order of creation: first created -> highest priority.
       # See how all your routes lay out with "rake routes".
