@@ -8,7 +8,13 @@ Rails.application.routes.draw do
     match '/about', to: 'static_pages#about', via: 'get'
     match '/contact', to: 'static_pages#contact', via: 'get'
     match '/help', to: 'static_pages#help', via: 'get'
-       
+
+    devise_scope :user do
+        get "/sign_up" => "devise/registrations#new"
+        get "/sign_in" => "devise/sessions#create"
+        get "/sign_out" => "devise/sessions#destroy"
+    end
+
       # The priority is based upon order of creation: first created -> highest priority.
       # See how all your routes lay out with "rake routes".
 

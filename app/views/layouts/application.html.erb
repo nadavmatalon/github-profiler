@@ -9,12 +9,47 @@
 	</head>
 	<body>
 
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+ <!--      <div class="messages">
+        <% if user_signed_in? %>
+          <span class="user-message"><%= "Welcom, #{current_user.email}" %></span><br/><br/>
+        <% else %>
+            <span class="user-message"><%= "Welcom user, please sign-up or log-in" %></span><br/><br/>    
+        <% end %>       
+      </div>
+      <div class="feedback">  
+        <span class="notice"><%= notice %></span>
+        <span class="alert"><%= alert %></span>
+      </div>
+      <div class="user-session-control">
+        <%= form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+            <%= f.label :email %>
+            <%= f.email_field :email, required: "true" %>
+            <%= f.label :password %>
+            <%= f.password_field :password, required: "true", autocomplete: "off" %>
+            <%= f.check_box :remember_me %> 
+            <%= f.label :remember_me %>
+            <span class="log-in-button">
+            <%= f.submit "Log in", id: "log-in" %>
+            </span>
+            <span class="sign-up-button">
+            <%= link_to "Sign up", new_user_registration_path, class: "sign-up" %>
+            </span>
+            <span class="log-out-button">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "log-out" %>
+          </span>
+        <% end %>
+    </div> -->
+
+          <%= link_to "Sign In", new_user_session_path, class: "sign-up" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "sign-up" %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "log-out" %><br/>
+
 
 		<br/><h1>WEB TEMPLATE</h1><br/>
 
 		<%= yield %>
+
+        <!-- <%= debug(params) if Rails.env.development? %> -->
 
 	</body>
 </html>
