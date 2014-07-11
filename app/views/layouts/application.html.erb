@@ -39,13 +39,20 @@
           </span>
         <% end %>
     </div> -->
-
-          <%= link_to "Sign In", new_user_session_path, class: "sign-up" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "sign-up" %>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "log-out" %><br/>
-
-
-		<br/><h1>WEB TEMPLATE</h1><br/>
+ 
+        <div>
+            <% if user_signed_in? %>
+                <br/><span class="user-message"><%= "Welcom, #{current_user.email}" %>
+                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "log-out" %></span><br/>
+            <% else %>
+                <br/><span class="user-message"><%= "Welcom user, please" %> 
+                <%= link_to "sign in", new_user_session_path, class: "sign-up" %>
+                <span class="user-message"><%= " or " %> 
+                <%= link_to "sign up", new_user_registration_path, class: "sign-up" %></span><br/>
+            <% end %>
+        </div>
+	
+    	<br/><h1>WEB TEMPLATE</h1><br/>
 
 		<%= yield %>
 
