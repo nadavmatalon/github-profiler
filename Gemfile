@@ -31,8 +31,10 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+
+# https://github.com/plataformatec/devise
+gem 'devise'
+
 
 group :doc do
     # https://github.com/voloko/sdoc
