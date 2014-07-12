@@ -34,15 +34,28 @@ describe "User Pages >" do
 
 		it "should have the content \'Edit Account Details\'" do
 	    	sign_up
-			click_link 'edit account'
+			click_link 'Account'
   		  	should have_content 'Edit Account Details'
   		end
-    end    
+    end 
+
+    describe "User should be able to: " do
+
+		it "sign in and then sign out" do
+	    	sign_up
+			click_link 'Sign out'
+  		  	should have_content 'Welcome user'
+  		  	sign_in
+  		  	should have_content 'Welcome ja'
+			click_link 'Sign out'
+  		  	should have_content 'Welcome user'
+  		end
+    end     
 end
 
 def sign_up
 	visit home_path
-	click_link 'sign up'
+	click_link 'Sign up'
 	within '.new_user' do
 		fill_in :user_name, with: 'John Apple'
 		fill_in :user_username, with: 'ja'
@@ -53,7 +66,15 @@ def sign_up
 	end
 end
 
-
+def sign_in
+	visit home_path
+	click_link 'Sign in'
+	within '.new_user' do
+		fill_in :user_username, with: 'ja'
+		fill_in :user_password, with: '12345678'
+		click_button 'Sign in'
+	end
+end
 
  
 # save_and_open_page

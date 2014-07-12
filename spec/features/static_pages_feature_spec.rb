@@ -29,24 +29,24 @@ describe "Static pages: " do
 			should have_content("WEB TEMPLATE")
 		end	
 
-		it "should have links for \'sign up\' and \'sign in\' if user is not signed in" do
-	    	expect(page).to have_link 'sign up'
-  		  	expect(page).to have_link 'sign in'
+		it "should have links for \'Sign up\' and \'Sign in\' if user is not signed in" do
+	    	expect(page).to have_link 'Sign up'
+  		  	expect(page).to have_link 'Sign in'
   		end
 
-		it "should have links for \'edit account\' and \'sign out\' if user is signed in" do
+		it "should have links for \'Account\' and \'Sign out\' if user is signed in" do
 	    	sign_up
-	    	expect(page).to have_link 'edit account'
-  		  	expect(page).to have_link 'sign out'
+	    	expect(page).to have_link 'Account'
+  		  	expect(page).to have_link 'Sign out'
   		end
 
-  		it "should have the content \'Welcome, user\' if user isn\'t signed in" do
-	    	expect(page).to have_content 'Welcome user,'
+  		it "should have the content \'Welcome user\' if user isn\'t signed in" do
+	    	expect(page).to have_content 'Welcome user'
   		end
 
-  		it "should have the content \'Welcome, @username\' if user signed in" do
+  		it "should have the content \'Welcome @username\' if user signed in" do
 			sign_up
-	    	expect(page).to have_content 'Welcome ja,'
+	    	expect(page).to have_content 'Welcome ja'
   		end
     end
 
@@ -92,7 +92,7 @@ end
 
 def sign_up
 	visit home_path
-	click_link 'sign up'
+	click_link 'Sign up'
 	within '.new_user' do
 		fill_in :user_name, with: 'John Apple'
 		fill_in :user_username, with: 'ja'
