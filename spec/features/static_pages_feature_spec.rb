@@ -29,12 +29,12 @@ describe "Static pages: " do
 			should have_content("WEB TEMPLATE")
 		end	
 
-		it "should have links for \'sign up\' and \'sign in\' if user not signed in" do
+		it "should have links for \'sign up\' and \'sign in\' if user is not signed in" do
 	    	expect(page).to have_link 'sign up'
   		  	expect(page).to have_link 'sign in'
   		end
 
-		it "should have links for \'edit account\' and \'sign out\' if user signed in" do
+		it "should have links for \'edit account\' and \'sign out\' if user is signed in" do
 	    	sign_up
 	    	expect(page).to have_link 'edit account'
   		  	expect(page).to have_link 'sign out'
