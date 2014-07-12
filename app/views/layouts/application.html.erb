@@ -39,27 +39,54 @@
           </span>
         <% end %>
     </div> -->
- 
-        <div>
-            <% if user_signed_in? %>
-                <br/><span class="user-message"><%= "Welcome #{current_user.username}," %>
-                <%= link_to "edit account", edit_user_registration_path, class: "sign-up" %></span>
-                <%= link_to "sign out", destroy_user_session_path, method: :delete, class: "sign-out" %></span><br/>
+        <header class="header">
 
+        <div class="navbar-inner">
+          <div class="container">
+            <nav>
 
-            <% else %>
-                <br/><span class="user-message"><%= "Welcome user, please" %> 
-                <%= link_to "sign in", new_user_session_path, class: "sign-up" %>
-                <span class="user-message"><%= " or " %> 
-                <%= link_to "sign up", new_user_registration_path, class: "sign-up" %></span><br/>
-            <% end %>
+              <ul class="nav navbar-nav pull-left">
+                <div>
+                    <% if user_signed_in? %>
+                        <li class="user-message"><%= "Welcome #{current_user.username}" %></li>
+                    <% else %>
+                        <li class="user-message"><%= "Welcome user" %></li>
+                    <% end %>
+                </div>
+              </ul>
+              <ul class="nav navbar-nav pull-right">
+                <li><%= link_to "Home", home_path, id: "nav-button"%></li>
+                <li><%= link_to "About Us", about_path, id: "nav-button"%></li>
+                <li><%= link_to "Contact Us", contact_path, id: "nav-button"%></li>
+                <li><%= link_to "Help", help_path, id: "nav-button"%></li>
+                <% if user_signed_in? %>
+                    <li><%= link_to "Account", edit_user_registration_path, id: "nav-button" %></li>
+                    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, id: "nav-button" %></li>
+                <% else %>
+                    <li><%= link_to "Sign in", new_user_session_path, id: "nav-button" %></li>
+                    <li><%= link_to "Sign up", new_user_registration_path, id: "nav-button" %></li>
+                <% end %>
+              </ul>
+            </nav>
+          </div>
         </div>
 	
-    	<br/><h1>WEB TEMPLATE</h1><br/>
+        </header>
 
+    	<br/><h1>WEB TEMPLATE</h1><br/>
+ 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 		<%= yield %>
 
         <!-- <%= debug(params) if Rails.env.development? %> -->
+
+        <footer class="footer">
+            <%= debug(params) if Rails.env.development? %>
+        </footer>
 
 	</body>
 </html>

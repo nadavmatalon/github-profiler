@@ -35,6 +35,15 @@ gem 'jbuilder', '~> 2.0'
 # https://github.com/plataformatec/devise
 gem 'devise'
 
+# https://github.com/twbs/bootstrap-sass
+gem 'bootstrap-sass'
+
+# https://github.com/ai/autoprefixer-rails
+gem "autoprefixer-rails"
+
+# https://github.com/sstephenson/sprockets
+gem 'sprockets'
+
 
 group :doc do
     # https://github.com/voloko/sdoc
