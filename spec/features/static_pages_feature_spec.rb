@@ -48,7 +48,6 @@ describe "Static pages: " do
 			sign_up
 	    	expect(page).to have_content 'Welcome ja,'
   		end
-
     end
 
 	describe "About Us page" do

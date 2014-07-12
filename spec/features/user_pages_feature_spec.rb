@@ -37,7 +37,7 @@ describe "User Pages >" do
 			click_link 'edit account'
   		  	should have_content 'Edit Account Details'
   		end
-    end
+    end    
 end
 
 def sign_up
