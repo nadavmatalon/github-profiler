@@ -11,9 +11,9 @@
 
  <!--      <div class="messages">
         <% if user_signed_in? %>
-          <span class="user-message"><%= "Welcom, #{current_user.email}" %></span><br/><br/>
+          <span class="user-message"><%= "Welcome, #{current_user.username}" %></span><br/><br/>
         <% else %>
-            <span class="user-message"><%= "Welcom user, please sign-up or log-in" %></span><br/><br/>    
+            <span class="user-message"><%= "Welcome user, please sign up or sign in" %></span><br/><br/>    
         <% end %>       
       </div>
       <div class="feedback">  
@@ -42,13 +42,13 @@
  
         <div>
             <% if user_signed_in? %>
-                <br/><span class="user-message"><%= "Welcom, #{current_user.username}" %>
+                <br/><span class="user-message"><%= "Welcome #{current_user.username}," %>
                 <%= link_to "edit account", edit_user_registration_path, class: "sign-up" %></span>
-                <%= link_to "log out", destroy_user_session_path, method: :delete, class: "log-out" %></span><br/>
+                <%= link_to "sign out", destroy_user_session_path, method: :delete, class: "sign-out" %></span><br/>
 
 
             <% else %>
-                <br/><span class="user-message"><%= "Welcom user, please" %> 
+                <br/><span class="user-message"><%= "Welcome user, please" %> 
                 <%= link_to "sign in", new_user_session_path, class: "sign-up" %>
                 <span class="user-message"><%= " or " %> 
                 <%= link_to "sign up", new_user_registration_path, class: "sign-up" %></span><br/>
