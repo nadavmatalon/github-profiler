@@ -30,12 +30,12 @@ describe "User Pages >" do
         end
     end
 
-    describe "Edit Account Details page: " do
+    describe "Account Details page: " do
 
-		it "should have the content \'Edit Account Details\'" do
+		it "should have the content \'Account Details\'" do
 	    	sign_up
 			click_link 'Account'
-  		  	should have_content 'Edit Account Details'
+  		  	should have_content 'Account Details'
   		end
     end 
 
