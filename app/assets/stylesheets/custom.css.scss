@@ -69,9 +69,7 @@ p {
 	letter-spacing: 0.01em;
 	padding-left: 15px;
 	padding-right: 15px;
-
 	&:hover {
-  		color: #285DBB;
   		text-decoration: none;
   		background-color: rgb(250, 250, 250);
   	}
@@ -226,5 +224,17 @@ input[type=submit] {
   }
 }
 
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  border-radius: 4px;
+  background-color: cadetblue;
+}
+
+.navbar-nav > li > a {
+  color: teal;
+  &:hover {
+    font-style: bold;
+    letter-spacing: 0.01em;
+  }
+}
 
 

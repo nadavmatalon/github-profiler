@@ -18,18 +18,18 @@
                         <%= render 'layouts/error_messages', object: resource %>
                     <% end %>
                 </ul>
-                <ul class="nav navbar-nav pull-right" id="myId">
-                    <li><%= link_to "Home", home_path, id: "nav-button"%></li>
-                    <li><%= link_to "About Us", about_path, id: "nav-button"%></li>
-                    <li><%= link_to "Contact Us", contact_path, id: "nav-button"%></li>
-                    <li><%= link_to "Help", help_path, id: "nav-button"%></li>
+                <ul class="nav navbar-nav nav nav-pills pull-right">
+                    <li class="home"><%= link_to "Home", home_path, id: "nav-button"%></li>
+                    <li class="about"><%= link_to "About Us", about_path, id: "nav-button"%></li>
+                    <li class="contact"><%= link_to "Contact Us", contact_path, id: "nav-button"%></li>
+                    <li class="help"><%= link_to "Help", help_path, id: "nav-button"%></li>
                     <% if user_signed_in? %>
-                        <li><%= link_to "Profile", profile_path, id: "nav-button" %></li>
-                        <li><%= link_to "Account", edit_user_registration_path, id: "nav-button" %></li>
+                        <li class="profile"><%= link_to "Profile", profile_path, id: "nav-button" %></li>
+                        <li class="account"><%= link_to "Account", edit_user_registration_path, id: "nav-button" %></li>
                         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, id: "nav-button" %></li>
                     <% else %>
-                        <li><%= link_to "Sign up", new_user_registration_path, id: "nav-button" %></li>
-                        <li><%= link_to "Sign in", new_user_session_path, id: "nav-button" %></li>
+                        <li class="sign-up"><%= link_to "Sign up", new_user_registration_path, id: "nav-button" %></li>
+                        <li class="sign-in"><%= link_to "Sign in", new_user_session_path, id: "nav-button" %></li>
                     <% end %>
                 </ul>
                 </div>
