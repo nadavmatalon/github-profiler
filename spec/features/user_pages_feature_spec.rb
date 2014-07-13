@@ -30,13 +30,36 @@ describe "User Pages >" do
         end
     end
 
-    describe "Account Details page: " do
+    describe "Account page: " do
 
-		it "should have the content \'Account Details\'" do
-	    	sign_up
-			click_link 'Account'
-  		  	should have_content 'Account Details'
+    	before (:each) do 
+    		sign_up
+    		click_link 'Account'
+    	end
+
+		it "should have the content \'Update Account Details\'" do
+  		  	should have_content 'Update Account Details'
   		end
+
+  		it "should have the base and page title" do
+            should have_title("Web Template | Account")
+        end
+    end 
+
+   	describe "Profile page: " do
+
+    	before (:each) do 
+    		sign_up
+    		click_link 'Profile'
+    	end
+
+		it "should have the content \'User Profile\'" do
+  		  	should have_content 'User Profile'
+  		end
+
+  		it "should have the base and page title" do
+            should have_title("Web Template | Profile")
+        end
     end 
 
     describe "User should be able to: " do
