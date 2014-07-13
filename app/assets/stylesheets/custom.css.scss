@@ -18,6 +18,8 @@ body {
   	padding-top: 1%;
   	min-height: 100%;
   	height: 100%;
+    background-color: rgb(220, 220, 220);
+    // background-image: url("light-background.jpg");
 }
 
 section {
@@ -179,7 +181,9 @@ $grayMediumLight: #eaeaea;
 	padding-left: 30px;
 	padding-right: 30px;
 	line-height: 1px;
-	width: 100%
+	width: 100%;
+  padding-bottom: 1px;
+  padding-top: 1px;
 }
 
 .sign-in-form, .sign-up-form, .edit-accout-form {
@@ -237,7 +241,7 @@ input[type=submit] {
   border-radius: 5px;
   line-height: 23px;
   &:hover {
-    color: blue;
+    color: green;
     text-decoration: none;
   }
 }
