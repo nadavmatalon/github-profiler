@@ -1,0 +1,35 @@
+<header class="header">
+    <div class="navbar-inner">
+        <div class="container">
+            <nav>
+                <ul class="nav navbar-nav pull-left">
+                    <% if user_signed_in? %>
+                        <li class="user-message"><%= "Welcome #{current_user.username}" %></li>
+                    <% else %>
+                        <li class="user-message"><%= "Welcome user" %></li>
+                    <% end %>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><%= render 'layouts/error_messages', object: resource %></li>
+                </ul>                
+                <ul class="nav navbar-nav pull-right">
+                    <li><%= link_to "Home", home_path, id: "nav-button"%></li>
+                    <li><%= link_to "About Us", about_path, id: "nav-button"%></li>
+                    <li><%= link_to "Contact Us", contact_path, id: "nav-button"%></li>
+                    <li><%= link_to "Help", help_path, id: "nav-button"%></li>
+                    <% if user_signed_in? %>
+                        <li><%= link_to "Account", edit_user_registration_path, id: "nav-button" %></li>
+                        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, id: "nav-button" %></li>
+                    <% else %>
+                        <li><%= link_to "Sign up", new_user_registration_path, id: "nav-button" %></li>
+                        <li><%= link_to "Sign in", new_user_session_path, id: "nav-button" %></li>
+                    <% end %>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+
+

@@ -1,0 +1,9 @@
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <div>
+      <ul class="nav navbar-nav">
+          <li class="error-message"><%= object.errors.full_messages.first.downcase %> - please try again</li>
+      </ul>
+    </div>
+  </div>
+<% end %>
