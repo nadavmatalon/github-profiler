@@ -10,9 +10,15 @@
                     <% end %>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li><%= render 'layouts/error_messages', object: resource %></li>
-                </ul>                
-                <ul class="nav navbar-nav pull-right">
+                    <% if alert %>
+                        <li class="alert alert-message"><%= alert %></li>
+                    <% elsif notice %>
+                        <li class="notice notice-message"><%= notice %></li>
+                    <% else %>
+                        <%= render 'layouts/error_messages', object: resource %>
+                    <% end %>
+                </ul>
+                <ul class="nav navbar-nav pull-right" id="myId">
                     <li><%= link_to "Home", home_path, id: "nav-button"%></li>
                     <li><%= link_to "About Us", about_path, id: "nav-button"%></li>
                     <li><%= link_to "Contact Us", contact_path, id: "nav-button"%></li>
@@ -25,6 +31,7 @@
                         <li><%= link_to "Sign in", new_user_session_path, id: "nav-button" %></li>
                     <% end %>
                 </ul>
+                </div>
             </nav>
         </div>
     </div>
