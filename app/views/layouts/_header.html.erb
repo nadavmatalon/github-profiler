@@ -24,6 +24,7 @@
                     <li><%= link_to "Contact Us", contact_path, id: "nav-button"%></li>
                     <li><%= link_to "Help", help_path, id: "nav-button"%></li>
                     <% if user_signed_in? %>
+                        <li><%= link_to "Profile", profile_path, id: "nav-button" %></li>
                         <li><%= link_to "Account", edit_user_registration_path, id: "nav-button" %></li>
                         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, id: "nav-button" %></li>
                     <% else %>

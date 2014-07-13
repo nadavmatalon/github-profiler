@@ -1,0 +1,13 @@
+<% provide(:page_title, "Profile") %>
+
+<h2 class="page-title">User Profile</h2>
+
+<div class="sign-up-form">	
+	<ul>
+		<li>Name: <%= current_user.name %></li>
+		<li>Username: <%= current_user.username %></li>
+		<li>Email: <%= current_user.email %></li>
+	</ul>
+</div>
+
+<%= render "devise/shared/links" %>
