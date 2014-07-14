@@ -13,6 +13,7 @@
 //= require jquery
 //= require angular
 //= require mustache
+//= require bootstrap
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
