@@ -4,6 +4,7 @@
   		<title><%= full_title(yield(:page_title)) %></title>
   		<%= stylesheet_link_tag 'application', media: 'all' %>
   		<%= javascript_include_tag 'application' %>
+        <%= javascript_include_tag 'mustache' %>
   		<%= csrf_meta_tags %>
   		<%= render 'layouts/shim' %>
 	</head>
@@ -33,7 +34,7 @@
     	<br/><h1 class="app-title">WEB TEMPLATE</h1><br/>
         <%= yield %>
         <%= render 'layouts/footer' %>
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
         <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 	</body>
 </html>
