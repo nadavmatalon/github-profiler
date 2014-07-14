@@ -37,18 +37,11 @@
         <%= render 'layouts/footer' %>
         <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
         <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-        <script>
-
-            $(document).ready(function() {
-
-            });
-         
+        <script>     
             <% if current_user != nil %>
                 var current_user = "<%= current_user.username %>"
                 var app = angular.module('WebTemplate', []);
-
                 app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
-
                     $http.get('https://api.github.com/users/'+current_user).success(function(profileData) {
                         $scope.avatar = profileData.avatar_url;
                         $scope.username = profileData.login;
