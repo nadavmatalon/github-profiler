@@ -37,8 +37,8 @@ describe "User Pages >" do
     		click_link 'Account'
     	end
 
-		it "should have the content \'Update Account Details\'" do
-  		  	should have_content 'Update Account Details'
+		it "should have the content \'Account Details\'" do
+  		  	should have_content 'Account Details'
   		end
 
   		it "should have the base and page title" do
@@ -59,6 +59,22 @@ describe "User Pages >" do
 
   		it "should have the base and page title" do
             should have_title("Web Template | Profile")
+        end
+    end 
+
+    describe "Github Profile page: " do
+
+      before (:each) do 
+        sign_up
+        click_link 'Github Profile'
+      end
+
+    it "should have the content \'Github Profile\'" do
+          should have_content 'Github Profile'
+      end
+
+      it "should have the base and page title" do
+            should have_title("Web Template | Github Profile")
         end
     end 
 

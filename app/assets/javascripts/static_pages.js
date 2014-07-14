@@ -13,6 +13,8 @@ $(document).ready(function(){
         $(".sign-up").addClass('active');
     } else if (document.title == "Web Template | Profile") {
         $(".profile").addClass('active');
+    } else if (document.title == "Web Template | Github Profile") {
+        $(".github-profile").addClass('active');
     } else if (document.title == "Web Template | Account") {
         $(".account").addClass('active');
     }; 

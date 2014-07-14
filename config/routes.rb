@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     match '/help', to: 'static_pages#help', via: 'get'
     
     match '/profile', to: 'static_pages#profile', via: 'get'
+    match '/github_profile', to: 'static_pages#github_profile', via: 'get'
+
 
     devise_scope :user do
         get "/sign_up" => "devise/registrations#new"

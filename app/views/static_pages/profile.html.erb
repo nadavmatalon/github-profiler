@@ -2,6 +2,7 @@
 
 <h2 class="page-title">User Profile</h2>
 
+                       
 <div class="sign-up-form">	
 	<ul class="edit-accout-form">
 		<li class="profile-header-form profile-avatar"><img ng-src= "{{ avatar }}"></li>
@@ -9,16 +10,8 @@
 		<li class="profile-content-form"><%= current_user.name %></li>
 		<li class="profile-header-form">Username</li>
 		<li class="profile-content-form"><%= current_user.username %></li>
-		<li class="profile-content-form"> {{ username }} </li>
 		<li class="profile-header-form">Email</li>
 		<li class="profile-content-form"><%= current_user.email %></li>
-		<li class="profile-content-form"> {{ email }} </li>
-		<li class="profile-header-form">Public Repos</li>
-		<li class="profile-content-form"> {{ publicRepos }} </li>
-		<li class="profile-header-form">Followers</li>
-		<li class="profile-content-form"> {{ followers }} </li>
-		<li class="profile-header-form">Following</li>
-		<li class="profile-content-form"> {{ following }} </li>
 	</ul>
 </div>
 
