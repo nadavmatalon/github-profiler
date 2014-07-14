@@ -50,11 +50,12 @@
                 app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
 
                     $http.get('https://api.github.com/users/'+current_user).success(function(profileData) {
-                        $scope.user = profileData.login;
-                        $scope.repos = profileData.public_repos;
                         $scope.avatar = profileData.avatar_url;
-                        $scope.following = profileData.following;
-                        $scope.followers = profileData.followers;
+                        $scope.username = profileData.login;
+                        $scope.email = profileData.email || "no email";
+                        $scope.publicRepos = profileData.public_repos || "0";
+                        $scope.following = profileData.following || "0";
+                        $scope.followers = profileData.followers || "0";
                     });
                 }]);
             <% end %>   
@@ -69,7 +70,7 @@ https://api.github.com/users/technoweenie/repos
  -->
 
 
-            // function getProfile(username) {
+ <!--            // function getProfile(username) {
             //     $.get('https://api.github.com/users/' + username, function(user) {
             //         var newProfile = Mustache.render($('#profile-template').html(), user);
             //         $(".myID").prepend(user.id);
@@ -87,3 +88,4 @@ https://api.github.com/users/technoweenie/repos
 
             //     });
             // };
+ -->
