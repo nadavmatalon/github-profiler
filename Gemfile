@@ -44,6 +44,8 @@ gem "autoprefixer-rails"
 # https://github.com/sstephenson/sprockets
 gem 'sprockets'
 
+# https://github.com/alexpeattie/heroku_secrets
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :doc do
     # https://github.com/voloko/sdoc
@@ -68,6 +70,16 @@ group :test, :development do
     gem 'pry-rails'
     # https://github.com/rspec/rspec-collection_matchers
     gem 'rspec-collection_matchers'
+    # https://github.com/DatabaseCleaner/database_cleaner
+    gem 'database_cleaner'
+    # https://github.com/teampoltergeist/poltergeist
+    # gem 'poltergeist'
+    # https://github.com/dockyard/capybara-email
+    # gem 'capybara-email'
+    # https://github.com/sj26/mailcatcher    
+    # gem 'mailcatcher'
+
+
 end
 
 group :development do
