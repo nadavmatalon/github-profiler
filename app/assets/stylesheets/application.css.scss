@@ -315,12 +315,18 @@ input[type=submit] {
   line-height: 17px;
   margin-top: 29px;
   margin-left: 23px;
+  line-height: 22px;
+  outline: none;
+  box-shadow: none;
 }
 
 #search-button {
   left: 9px;
   position: relative;
   top: -5px;
+  &:hover {
+    color: darkgreen;
+  }
 }
 
 
