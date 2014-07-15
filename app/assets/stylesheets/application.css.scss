@@ -296,6 +296,7 @@ input[type=submit] {
 .git-profile-avatar {
   @extend .profile-avatar;
   float: left;
+  margin-top: 6px;
 }
 
 
@@ -350,45 +351,68 @@ input[type=submit] {
 
 
 .aaaa {
-  background: #606c88; /* Old browsers */
-  background: -moz-linear-gradient(top,  #606c88 0%, #3f4c6b 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#606c88), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #606c88 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #606c88 0%,#3f4c6b 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #606c88 0%,#3f4c6b 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #606c88 0%,#3f4c6b 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
-  width: 800px;
-  padding: 20px 20px 10px 20px;
+  background-color: #96aa96;
+  border: 1px solid #829682;
+  border-radius: 10px;
   font-family: Helvetica Neue;
-  border-radius: 15px;
-  color: #fff;
+  width: 800px;
+  padding-top: 20px;
   margin-top: 50px;
   margin-bottom: 200px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.search-profile-data-header {
+  text-decoration: none;
+  font-size: 2em;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-family: Helvetica Neue;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover {
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+  }
 }
 
-// .profile a {
-//   color: #fff;
-// }
+.search-profile-data {
+  color: white;
+  margin-top: 0px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 1.4em;
+  letter-spacing: 0.03em;
+  font-family: Helvetica Neue;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+   }
+}
 
-// .profile .left {
-//   width: 110px;
-//   float: left;
-// }
+#save-profile {
+  margin-top: -48px;
+  float: right;
+  margin-right: -4px;
+  outline: none;
+  box-shadow: none;
+  &:hover {
+    color: green;
+    text-decoration: none;
+  }
+}
 
-// .profile .right {
-//   width: 450px;
-//   float: left;
-//   padding: 0 20px;
-// }
 
-// .profile .right h3 {
-//   margin-top: 0;
-// }
-// .profile img {
-//   width: 100%;
-// }
 
 
