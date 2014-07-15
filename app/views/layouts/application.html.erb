@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="WebTemplate">
+<html <% if current_user != nil %>ng-app="WebTemplate"<% end %>>
 	<head>
   		<title><%= full_title(yield(:page_title)) %></title>
   		<%= stylesheet_link_tag 'application', media: 'all' %>
@@ -12,7 +12,7 @@
     	<br/><h1 class="app-title">WEB TEMPLATE</h1><br/>
         <%= yield %>
         <%= render 'layouts/footer' %>
-        <script>  
+        <script>              
             get_git_profile_data()
             function get_git_profile_data() {     
                 <% if current_user != nil %>
@@ -21,6 +21,7 @@
                     app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
                         $http.get('https://api.github.com/users/' + current_user).
                         success(function(profileData, status) {
+                            $(".github-profile").removeClass('hidden')
                             $scope.avatar = profileData.avatar_url;
                             $scope.username = profileData.login;
                             $scope.email = profileData.email || "n/a";

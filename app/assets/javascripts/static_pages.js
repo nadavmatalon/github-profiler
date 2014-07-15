@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    console.log("hello")
     if (document.title == "Web Template | Home") {
         $(".home").addClass('active');
     } else if (document.title == "Web Template | About") {
@@ -17,7 +18,8 @@ $(document).ready(function(){
         $(".github-profile").addClass('active');
     } else if (document.title == "Web Template | Account") {
         $(".account").addClass('active');
-    }; 
+    };
+
 });
 
 
