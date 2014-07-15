@@ -13,37 +13,34 @@
         <%= yield %>
         <%= render 'layouts/footer' %>
         <script>              
-            get_git_profile_data()
-            function get_git_profile_data() {     
-                <% if current_user != nil %>
-                    var current_user = "<%= current_user.username %>"
-                    var app = angular.module('WebTemplate', []);
-                    app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
-                        $http.get('https://api.github.com/users/' + current_user).
-                        success(function(profileData, status) {
-                            $(".github-profile").removeClass('hidden')
-                            $scope.avatar = profileData.avatar_url;
-                            $scope.username = profileData.login;
-                            $scope.email = profileData.email || "n/a";
-                            $scope.html_url = profileData.html_url;
-                            $scope.date = profileData.created_at;
-                            $scope.publicRepos = profileData.public_repos || "0";
-                            $scope.following = profileData.following || "0";
-                            $scope.followers = profileData.followers || "0";
-                        }).error(function(profileData, status) {
-                            $scope.avatar = "github_avatar.png";
-                            $scope.username = "n/a";
-                            $scope.email = "n/a";
-                            $scope.html_url = "n/a";
-                            $scope.date = "n/a";
-                            $scope.publicRepos = "n/a";
-                            $scope.following = "n/a";
-                            $scope.followers = "n/a";
-                            $scope.message = status;
-                        });
-                    }]);
-                <% end %> 
-            };  
+            <% if current_user != nil %>
+                var current_user = "<%= current_user.username %>"
+                var app = angular.module('WebTemplate', []);
+                app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
+                    $http.get('https://api.github.com/users/' + current_user).
+                    success(function(profileData, status) {
+                        $(".github-profile").removeClass('hidden')
+                        $scope.avatar = profileData.avatar_url;
+                        $scope.username = profileData.login;
+                        $scope.email = profileData.email || "n/a";
+                        $scope.html_url = profileData.html_url;
+                        $scope.date = profileData.created_at;
+                        $scope.publicRepos = profileData.public_repos || "0";
+                        $scope.following = profileData.following || "0";
+                        $scope.followers = profileData.followers || "0";
+                    }).error(function(profileData, status) {
+                        $scope.avatar = "github_avatar.png";
+                        $scope.username = "n/a";
+                        $scope.email = "n/a";
+                        $scope.html_url = "n/a";
+                        $scope.date = "n/a";
+                        $scope.publicRepos = "n/a";
+                        $scope.following = "n/a";
+                        $scope.followers = "n/a";
+                        $scope.message = status;
+                    });
+                }]);
+            <% end %> 
         </script>
 	</body>
 </html>

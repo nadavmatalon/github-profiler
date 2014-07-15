@@ -25,7 +25,6 @@ html {
   	overflow-y: scroll;
   	height: 100%;
     position: static;
-    background-image: image-url("light-background.jpg");
 }
 
 
@@ -35,9 +34,10 @@ body {
   	height: 100%;
     width: 100%;
     // background-color: rgb(220, 220, 220);
+    background-image: image-url("light-background.jpg");
     position: static;
-     background-attachment: fixed;
-     background-color: transparent;
+    background-attachment: fixed;
+    background-color: transparent;
 }
 
 .container {
@@ -317,44 +317,11 @@ input[type=submit] {
   margin-left: 23px;
 }
 
-
 #search-button {
   margin-left: 10px;
   margin-top: 34px;
 }
 
-// #search-button {
-//   top: 72px;
-//   left: 49px;
-//   padding: 5px; 
-//   border: 1px solid rgb(100, 100, 100); 
-//   -webkit-border-radius: 5px;
-//   border-radius: 5px;
-//   width: 100px;
-//   height: 35px;
-//   line-height: 10px;  
-//   font-family: "Gotham Narrow SSm",sans-serif,Arial;
-//   font-size: 16px;
-//   outline: none;
-//   box-shadow: none;
-// }
-
-// #search-button:hover {
-//   top: 72px;
-//   left: 49px;
-//   padding: 5px; 
-//   border: 1px solid rgb(100, 100, 100); 
-//   -webkit-border-radius: 5px;
-//   border-radius: 5px;
-//   width: 100px;
-//   height: 35px;
-//   line-height: 10px;  
-//   font-family: "Gotham Narrow SSm",sans-serif,Arial;
-//   font-size: 16px;
-//   outline: none;
-//   box-shadow: none;
-//   color: blue;
-// }
 
 .hidden {
   display: none;
