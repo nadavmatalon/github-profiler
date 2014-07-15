@@ -4,32 +4,34 @@
 
 	<div class = "search-box-container">
 		<form id='add_profile'>
-			<input id="user_name" type="text" placeholder="Enter Gitgub username..." autofocus required>
-		      <button type='submit'>Search</button>
-			<!-- <input id="search-button" type="submit" value="Search">  -->
-	      	<!-- <button id="search-button" type='submit'>Search</button> -->
+			<input id="user_name" class="search-box" type="text" placeholder="Enter Gitgub username..." autofocus>
+ 			<input id="search-button" type="submit" value="Search"> 
 	    </form>		
 	</div>
 
-
-	    <div class='profile-container'>
+	<div class='profile-container'>
     </div>
 
     <template id='profile-template'>
-      <div class="profile">
-        <div class="left">
-          <img src="{{ avatar_url }}">
-        </div>
+      	<div class="aaaa">
+        	<div class="git-profile-avatar">
+          		<img src="{{ avatar_url }}">
+        	</div>
 
-        <div class="right">
-          <h3>
-            <a href="{{ html_url }}">
-              {{ login }}
-            </a>
-          </h3>
-          <h4>Repos: {{ public_repos }}</h4>
-          <h4>Followers: {{ followers }}</h4>
-        </div>
+        	<div class="git-profile-info">
+        		<ul class="a">
+        			<li class="b"><a href="{{ html_url }}"> {{ login }} </a></li>
+        			<li class="b"> {{ email }} </a></li>
+	    			<li class="b"><a href="{{ html_url }}"> {{ html_url }} </a></li>
+	    			<li class="b"><a href="{{ html_url }}"> Joined on: {{ created_at  | created_at:'d-MM-yyyy' }} </a></li>
+        			<li class="b">Following: {{ following }}</li>
+        			<li class="b">Followers: {{ followers }}</li>
+        			<li class="b">Public Repos: {{ public_repos }} </li>
+        		</ul>
+        	</div>
+        
         <br clear="all">
-      </div>
+      	</div>
     </template>
+
+    <p id="error_message"></p>
