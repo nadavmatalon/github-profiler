@@ -19,7 +19,6 @@ $(document).ready(function(){
     } else if (document.title == "Web Template | Account") {
         $(".account").addClass('active');
     };
-
 });
 
 

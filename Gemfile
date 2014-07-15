@@ -78,8 +78,6 @@ group :test, :development do
     # gem 'capybara-email'
     # https://github.com/sj26/mailcatcher    
     # gem 'mailcatcher'
-
-
 end
 
 group :development do
