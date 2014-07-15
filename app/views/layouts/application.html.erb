@@ -41,9 +41,32 @@
                     });
                 }]);
             <% end %> 
+        
+
+            function getProfile(user_name) {
+
+                $.get('https://api.github.com/users/' + user_name, function(user){
+                    alert(user_name);
+                    var newProfile = Mustache.render($('#profile-template').html(), user);
+                    $('.profile-container').prepend(newProfile);
+                }).error(function(){
+                    alert("There is no user called " + user_name);
+                }).always(function(){
+                    $('#user_name').val('');
+                })
+            };
+
+            $('#add_profile').on('submit', function(event) {
+                event.preventDefault();
+                getProfile($('#user_name').val());
+            });
         </script>
 	</body>
 </html>
+
+
+
+
 
 
 <!-- get list of repos for a user:

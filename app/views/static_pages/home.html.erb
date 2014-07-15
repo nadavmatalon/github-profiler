@@ -3,8 +3,33 @@
 <!-- <h2 class="page-title">Home</h2> -->
 
 	<div class = "search-box-container">
-
-		<input id="search-box" type="text" placeholder="Enter Gitgub username..." autofocus required>
-		<input id="search-button" type="submit" value="Search"> 
-
+		<form id='add_profile'>
+			<input id="user_name" type="text" placeholder="Enter Gitgub username..." autofocus required>
+		      <button type='submit'>Search</button>
+			<!-- <input id="search-button" type="submit" value="Search">  -->
+	      	<!-- <button id="search-button" type='submit'>Search</button> -->
+	    </form>		
 	</div>
+
+
+	    <div class='profile-container'>
+    </div>
+
+    <template id='profile-template'>
+      <div class="profile">
+        <div class="left">
+          <img src="{{ avatar_url }}">
+        </div>
+
+        <div class="right">
+          <h3>
+            <a href="{{ html_url }}">
+              {{ login }}
+            </a>
+          </h3>
+          <h4>Repos: {{ public_repos }}</h4>
+          <h4>Followers: {{ followers }}</h4>
+        </div>
+        <br clear="all">
+      </div>
+    </template>

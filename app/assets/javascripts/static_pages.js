@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    console.log("hello")
     if (document.title == "Web Template | Home") {
         $(".home").addClass('active');
     } else if (document.title == "Web Template | About") {

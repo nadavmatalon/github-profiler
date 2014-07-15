@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     match '/profile', to: 'static_pages#profile', via: 'get'
     match '/github_profile', to: 'static_pages#github_profile', via: 'get'
 
-
     devise_scope :user do
         get "/sign_up" => "devise/registrations#new"
         get "/sign_in" => "devise/sessions#create"
@@ -20,9 +19,6 @@ Rails.application.routes.draw do
         get "/edit_account" => "devise/registrations#edit"
         get "/password_edit" => "devise/passwords#edit"
         get "/password_new" => "devise/passwords#new"
-
-        # get "/profile" => "devise/sessions#show"
-
     end
 
       # The priority is based upon order of creation: first created -> highest priority.
