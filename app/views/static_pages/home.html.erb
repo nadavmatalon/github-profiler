@@ -1,9 +1,8 @@
 <% provide(:page_title, "Home") %>
 
-<div ng-controller="GitSearchController">
-
 	<!-- <h2 class="page-title">Home</h2> -->
 
+<div ng-controller="GitSearchController">
 	<div class = "search-box-container">
 		<form id='add_profile' ng-submit="loadUser()">
 			<input ng-model='username_input' id="user_name" class="search-box" type="text" placeholder="Enter Gitgub username..." autofocus>
@@ -20,7 +19,7 @@
 				<li class="search-profile-data-header"> {{ username }} </li>
 				<li class="search-profile-data"> {{ email }} </li>
 				<li class="search-profile-data"> {{ html_url }} </li>
-				<li class="search-profile-data"> Joined on: {{ date  | date:'d-MM-yyyy' }} </li>
+				<li class="search-profile-data"> Joined on: {{ date | date:'d-MM-yyyy' }} </li>
 				<li class="search-profile-data"> Following: {{ following }} </li>
 				<li class="search-profile-data"> Followers: {{ followers }} </li>
 				<li class="search-profile-data"> Public repos: {{ publicRepos }} </li>
@@ -28,6 +27,6 @@
 			<input id="save-profile" type="submit" value="Save profile">
 		</div>
 	</div>
-		<p id="error_message"></p>
+	<p id="error_message"></p>
 </div>
 

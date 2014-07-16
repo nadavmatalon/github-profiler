@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <% if current_user != nil %>ng-app="WebTemplate"<% end %>>
+<html ng-app="WebTemplate">
 	<head>
   		<title><%= full_title(yield(:page_title)) %></title>
   		<%= stylesheet_link_tag 'application', media: 'all' %>
@@ -20,7 +20,7 @@
                     $http.get('https://api.github.com/users/' + current_user).
                     success(function(profileData, status) {
                         $(".github-profile").removeClass('hidden')
-                        $scope.avatar = profileData.avatar_url;
+                        $scope.user_avatar = profileData.avatar_url;
                         $scope.username = profileData.login;
                         $scope.email = profileData.email || "n/a";
                         $scope.html_url = profileData.html_url;
@@ -40,72 +40,36 @@
                         $scope.message = status;
                     });
                 }]);
+            <% else %>
+                var app = angular.module('WebTemplate', []);
             <% end %> 
 
-                app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
+            app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
 
-                    $scope.loadUser = function() {
-                        $http.get('https://api.github.com/users/' + $scope.username_input).
-                        success(function(userData) {
+                $scope.loadUser = function() {
 
-                            $(".aaaa").addClass('show')
-                            $(".aaaa").removeClass('hidden')
-                            $scope.avatar = userData.avatar_url;
-                            $scope.username = userData.login;
-                            $scope.email = userData.email || "n/a";
-                            $scope.html_url = userData.html_url;
-                            $scope.date = userData.created_at;
-                            $scope.publicRepos = userData.public_repos || "0";
-                            $scope.following = userData.following || "0";
-                            $scope.followers = userData.followers || "0";
-                            $('#error_message').text("");
-                        }).error(function(userData) {
-                            $(".aaaa").addClass('hidden')
-                            $(".aaaa").removeClass('show')
-                            $('#error_message').text("Sorry, there\'s no Github user " + user_name);
-                        }).finally(function(){
-                            $scope.username_input = '';
-                        })
-
-                        // .error(function(userData, status) {
-                        //     $('#error_message').text("Sorry, there\'s no Github user " + user_name);
-                        // }).always(function(){
-                        //     // $('#user_name').val('');
-                        // });
-                    }
-                }]);
-
-
-
-
-
-
-
-
-                // $.get('https://api.github.com/users/' + user_name, function(user){
-                //     var newProfile = Mustache.render($('#profile-template').html(), user);
-                //     $('.profile-container').prepend(newProfile);
-                // }).error(function(){
-                //     $('#error_message').text("Sorry, there\'s no Github user " + user_name);
-                // }).always(function(){
-                //     $('#user_name').val('');
-                // })
- 
-
-
-
-
-            // $('#add_profile').on('submit', function(event) {
-            //     event.preventDefault();
-            //     if ($('.aaaa')[0] != null) {
-            //         $('.aaaa').first().fadeOut(100, function() {
-            //             $(this).remove();
-            //             getProfile($('#user_name').val());
-            //         });
-            //     } else {
-            //         getProfile($('#user_name').val());
-            //     };
-            // });
+                    $http.get('https://api.github.com/users/' + $scope.username_input).
+                    success(function(userData) {
+                        $(".aaaa").addClass('show')
+                        $(".aaaa").removeClass('hidden')
+                        $scope.avatar = userData.avatar_url;
+                        $scope.username = userData.login;
+                        $scope.email = userData.email || "n/a";
+                        $scope.html_url = userData.html_url;
+                        $scope.date = userData.created_at;
+                        $scope.publicRepos = userData.public_repos || "0";
+                        $scope.following = userData.following || "0";
+                        $scope.followers = userData.followers || "0";
+                        $('#error_message').text("");
+                    }).error(function(userData) {
+                        $(".aaaa").addClass('hidden')
+                        $(".aaaa").removeClass('show')
+                        $('#error_message').text("Sorry, there\'s no Github user " + user_name);
+                    }).finally(function(){
+                        $scope.username_input = '';
+                    })
+                }
+            }]);
         </script>
 	</body>
 </html>
