@@ -45,30 +45,31 @@
             <% end %> 
 
             app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
-
                 $scope.loadUser = function() {
-
-                    $http.get('https://api.github.com/users/' + $scope.username_input).
-                    success(function(userData) {
-                        $(".aaaa").addClass('show')
-                        $(".aaaa").removeClass('hidden')
-                        $scope.avatar = userData.avatar_url;
-                        $scope.username = userData.login;
-                        $scope.email = userData.email || "n/a";
-                        $scope.html_url = userData.html_url;
-                        $scope.date = userData.created_at;
-                        $scope.publicRepos = userData.public_repos || "0";
-                        $scope.following = userData.following || "0";
-                        $scope.followers = userData.followers || "0";
-                        $('#error_message').text("");
-                    }).error(function(userData) {
-                        $(".aaaa").addClass('hidden')
-                        $(".aaaa").removeClass('show')
-                        $('#error_message').text("Sorry, there\'s no Github user " + user_name);
-                    }).finally(function(){
-                        $scope.username_input = '';
-                    })
-                }
+                        if ($scope.username_input != "") {
+                        console.log($scope.username_input);
+                        $http.get('https://api.github.com/users/' + $scope.username_input).
+                        success(function(userData) {
+                            $(".aaaa").addClass('show')
+                            $(".aaaa").removeClass('hidden')
+                            $scope.avatar = userData.avatar_url;
+                            $scope.username = userData.login;
+                            $scope.email = userData.email || "n/a";
+                            $scope.html_url = userData.html_url;
+                            $scope.date = userData.created_at;
+                            $scope.publicRepos = userData.public_repos || "0";
+                            $scope.following = userData.following || "0";
+                            $scope.followers = userData.followers || "0";
+                            $('#error_message').text("");
+                        }).error(function(userData) {
+                            $(".aaaa").addClass('hidden')
+                            $(".aaaa").removeClass('show')
+                            $('#error_message').text("Sorry, there\'s no Github user " + user_name);
+                        }).finally(function(){
+                            $scope.username_input = '';
+                        });
+                    };
+                };
             }]);
         </script>
 	</body>
