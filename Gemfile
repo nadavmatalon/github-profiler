@@ -47,6 +47,12 @@ gem 'sprockets'
 # https://github.com/alexpeattie/heroku_secrets
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
+# https://github.com/websocket-rails/websocket-rails
+gem 'websocket-rails'
+
+# https://github.com/macournoyer/thin/
+gem 'thin'
+
 group :doc do
     # https://github.com/voloko/sdoc
     gem 'sdoc', '~> 0.4.0'
