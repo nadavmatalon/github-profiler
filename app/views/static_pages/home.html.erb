@@ -15,16 +15,20 @@
 	    	<img src="{{ avatar }}">
 	    </div>
 		<div class="git-profile-info">
-		    <ul class="search-profile">
-				<li class="search-profile-data-header"> {{ username }} </li>
-				<li class="search-profile-data"> {{ email }} </li>
-				<li class="search-profile-data"> {{ html_url }} </li>
-				<li class="search-profile-data"> Joined on: {{ date | date:'d-MM-yyyy' }} </li>
-				<li class="search-profile-data"> Following: {{ following }} </li>
-				<li class="search-profile-data"> Followers: {{ followers }} </li>
-				<li class="search-profile-data"> Public repos: {{ publicRepos }} </li>
-			</ul>
-			<input id="save-profile" type="submit" value="Save profile">
+			<form id='save_profile-form' onclick="save_profile()">
+			    <ul class="search-profile">
+					<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
+					<li class="search-profile-data"> {{ email }} </li>
+					<li class="search-profile-data"> {{ html_url }} </li>
+					<li class="search-profile-data"> Joined on: {{ date | date:'d-MM-yyyy' }} </li>
+					<li class="search-profile-data"> Following: {{ following }} </li>
+					<li class="search-profile-data"> Followers: {{ followers }} </li>
+					<li class="search-profile-data"> Public repos: {{ publicRepos }} </li>
+				</ul>
+				<% if (current_user) %>
+					<input id="save-profile" type="submit" value="Save profile">
+				<% end %>
+			</form>
 		</div>
 	</div>
 	<p id="error_message"></p>
