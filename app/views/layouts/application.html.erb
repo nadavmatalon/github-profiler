@@ -46,8 +46,8 @@
 
             app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
                 $scope.loadUser = function() {
-                        if ($scope.username_input != "") {
-                        console.log($scope.username_input);
+                    if ($scope.username_input != '') {
+                    console.log($scope.username_input);
                         $http.get('https://api.github.com/users/' + $scope.username_input).
                         success(function(userData) {
                             $(".aaaa").addClass('show')
@@ -61,10 +61,12 @@
                             $scope.following = userData.following || "0";
                             $scope.followers = userData.followers || "0";
                             $('#error_message').text("");
+                            $scope.username_input = '';
                         }).error(function(userData) {
                             $(".aaaa").addClass('hidden')
                             $(".aaaa").removeClass('show')
-                            $('#error_message').text("Sorry, there\'s no Github user " + user_name);
+                            $('#error_message').text("Sorry, there\'s no Github user " + $scope.username_input);
+                            $scope.username_input = '';
                         }).finally(function(){
                             $scope.username_input = '';
                         });
