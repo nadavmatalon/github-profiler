@@ -49,6 +49,12 @@
                     if ($scope.username_input) {
                         $http.get('https://api.github.com/users/' + $scope.username_input).
                         success(function(userData) {
+                            $("#save-profile").removeClass('disable_button') 
+                            $("#save-profile").val("Save Profile");
+                            <% if current_user != nil %>
+                                document.getElementById('save-profile').disabled = false;
+                            <% end %> 
+                            // $("#save-profile").removeClass('hide')
                             $(".aaaa").addClass('show')
                             $(".aaaa").removeClass('hidden')
                             $scope.avatar = userData.avatar_url;
@@ -73,13 +79,22 @@
                 };
 
                 $scope.saveProfile = function() {
-                    console.log('Here is where we would add ' + $scope.username + ' to the DB');
-                    console.log(current_user);
-                    url = ("/create_gitlink" + "/<%= current_user.id %>/" + $scope.username);
-                    $http.post(url);
+                    <% if current_user != nil %>
+                        url = ("/create_gitlink" + "/<%= current_user.id %>/" + $scope.username);
+                        $http.post(url).
+                        success(function(saveResult) {
+                            $("#save-profile").val("Profile saved");
+                            $("#save-profile").addClass('disable_button');
+                            document.getElementById('save-profile').disabled = 'disabled';
+                            // $("#save-profile").addClass('hide')
+                            console.log("Profile successfully saved!");
+                            $('#save_result_message').text("Profile successfully saved!");
+                        }).error(function(saveResult) {
+                            $('#save_result_message').text("Profile could not be saved");
+                        });
+                   <% end %> 
                 };
             }]);
-
         </script>
 	</body>
 </html>

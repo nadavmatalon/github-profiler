@@ -1,10 +1,10 @@
 class GitlinksController < ApplicationController
 # class GitlinksController < ActionController::Base
 
-	def new
-    	@current_user = current_user
-    	@gitlink = Gitlink.new
-  	end
+	# def new
+ #    	@current_user = current_user
+ #    	@gitlink = Gitlink.new
+ #  	end
 
 	def create
 		current_user = User.find params[:user]

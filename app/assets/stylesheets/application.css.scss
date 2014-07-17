@@ -366,7 +366,7 @@ input[type=submit] {
   width: 800px;
   padding-top: 20px;
   margin-top: 50px;
-  margin-bottom: 200px;
+  margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 1px;
@@ -421,6 +421,18 @@ input[type=submit] {
   }
 }
 
+.disable_button {
+  margin-top: -48px;
+  float: right;
+  margin-right: -4px;
+  outline: none;
+  box-shadow: none;
+  color: grey;
+  &:hover {
+    color: grey;
+    text-decoration: none;
+  }
+}
 
 
 
