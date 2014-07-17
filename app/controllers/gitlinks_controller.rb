@@ -8,7 +8,12 @@ class GitlinksController < ApplicationController
 
 	def create
 		current_user = User.find params[:user]
-		@gitlink = current_user.gitlinks.create(link: params[:content])
+		if Gitlink.exists?(:user_id => current_user.id, link: params[:content])
+			# sessions[:database_result] = "not saved"
+		else
+			@gitlink = current_user.gitlinks.create(link: params[:content])
+			# sessions[:database_result] = "saved"
+		end
 		redirect_to '/home' unless request.xhr?
 	end
 

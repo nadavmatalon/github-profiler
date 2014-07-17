@@ -49,7 +49,7 @@
                     if ($scope.username_input) {
                         $http.get('https://api.github.com/users/' + $scope.username_input).
                         success(function(userData) {
-                            $("#save-profile").removeClass('disable_button') 
+                            $("#save-profile").removeClass('disable_button');
                             $("#save-profile").val("Save Profile");
                             <% if current_user != nil %>
                                 document.getElementById('save-profile').disabled = false;
@@ -66,6 +66,8 @@
                             $scope.following = userData.following || "0";
                             $scope.followers = userData.followers || "0";
                             $('#result_message').text("");
+                            // $('#result_message').text("#{sessions[:database_result}");
+
                             // $scope.username_input = '';
                         }).error(function(userData) {
                             $(".aaaa").addClass('hidden');
