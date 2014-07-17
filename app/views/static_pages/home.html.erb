@@ -15,7 +15,7 @@
 	    	<img src="{{ avatar }}">
 	    </div>
 		<div class="git-profile-info">
-			<form id='save_profile-form' onclick="save_profile()">
+			<form id='save_profile-form'>
 			    <ul class="search-profile">
 					<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
 					<li class="search-profile-data"> {{ email }} </li>
@@ -26,7 +26,7 @@
 					<li class="search-profile-data"> Public repos: {{ publicRepos }} </li>
 				</ul>
 				<% if (current_user) %>
-					<input id="save-profile" type="submit" value="Save profile">
+					<input id="save-profile" ng-click='saveProfile()' type="submit" value="Save profile">
 				<% end %>
 			</form>
 		</div>

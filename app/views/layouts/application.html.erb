@@ -46,8 +46,7 @@
 
             app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
                 $scope.loadUser = function() {
-                    if ($scope.username_input != '') {
-                    console.log($scope.username_input);
+                    if ($scope.username_input) {
                         $http.get('https://api.github.com/users/' + $scope.username_input).
                         success(function(userData) {
                             $(".aaaa").addClass('show')
@@ -72,11 +71,12 @@
                         });
                     };
                 };
+
+                $scope.saveProfile = function() {
+                    console.log('Here is where we would add ' + $scope.username + ' to the DB')
+                }
             }]);
 
-            function save_profile(){
-                console.log("save-profile");
-            };
         </script>
 	</body>
 </html>
