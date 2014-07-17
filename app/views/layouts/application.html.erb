@@ -66,15 +66,18 @@
                             $(".aaaa").removeClass('show')
                             $('#error_message').text("Sorry, there\'s no Github user " + $scope.username_input);
                             $scope.username_input = '';
-                        }).finally(function(){
+                        }).finally(function() {
                             $scope.username_input = '';
                         });
                     };
                 };
 
                 $scope.saveProfile = function() {
-                    console.log('Here is where we would add ' + $scope.username + ' to the DB')
-                }
+                    console.log('Here is where we would add ' + $scope.username + ' to the DB');
+                    console.log(current_user);
+                    url = ("/create_gitlink" + "/<%= current_user.id %>/" + $scope.username);
+                    $http.post(url);
+                };
             }]);
 
         </script>
