@@ -66,14 +66,10 @@
                             $scope.following = userData.following || "0";
                             $scope.followers = userData.followers || "0";
                             $('#result_message').text("");
-                            // $('#result_message').text("#{sessions[:database_result}");
-
-                            // $scope.username_input = '';
                         }).error(function(userData) {
                             $(".aaaa").addClass('hidden');
                             $(".aaaa").removeClass('show');
                             $('#result_message').text("Sorry, there\'s no Github user " + $scope.username_input);
-                            // $scope.username_input = '';
                         }).finally(function() {
                             $scope.username_input = '';
                         });
