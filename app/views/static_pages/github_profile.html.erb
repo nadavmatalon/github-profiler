@@ -3,8 +3,42 @@
 <div ng-controller="GitProfileController">
 
 	<h2 class="page-title">Github Profile</h2>
-	               
-	<div class="sign-up-form">	
+	
+	<div class="bbbb">
+	    <div class="git-profile-avatar">
+	    	<img ng-src="{{ user_avatar }}">
+	    </div>
+		<div class="git-profile-info">
+			<form id='save_profile-form'>
+			    <ul class="search-profile">
+					<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
+					<li class="search-profile-data"> {{ email }} </li>
+					<li class="search-profile-data"><a href=<%= "http://www.github.com/{{username}}" %>> {{ html_url }} </a></li>
+					<li class="search-profile-data"> Joined on: {{ date | date:'d-MM-yyyy' }} </li>
+					<li class="search-profile-data"> Following: {{ following }} </li>
+					<li class="search-profile-data"> Followers: {{ followers }} </li>
+					<li class="search-profile-data"> Public repos: {{ publicRepos }} </li>
+				</ul>
+			</form>
+		</div>
+	</div>
+	
+	<div class="cccc">
+		<% @saved_links = current_user.gitlinks %>
+			<ul>
+				<li class="search-profile-data-header" id="profile-username">Saved Links</li>
+				<% if @saved_links.any? %>
+					<% @saved_links.each do |gitlink| %>
+						<li class="search-profile-data"><a href=<%= "http://www.github.com/#{gitlink.link}" %>><%= gitlink.link %></a></li>
+					<% end %>
+				<% else %>
+						<li class="search-profile-data"><%= "No saved links yet" %></li>
+        		<% end %>
+ 			</ul>
+	</div>
+  
+
+<!-- 	<div class="sign-up-form">	
 		<ul class="edit-accout-form">
 			<li class="profile-header-form profile-avatar"><img ng-src= "{{ user_avatar }}"></li>
 			<li class="profile-header-form">Username</li>
@@ -22,7 +56,7 @@
 			<li class="profile-header-form">Public Repos</li>
 			<li class="profile-content-form"> {{ publicRepos }} </li>
 		</ul>
-	</div>
+	</div> -->
 
 	<%= render "devise/shared/links" %>
 </div>

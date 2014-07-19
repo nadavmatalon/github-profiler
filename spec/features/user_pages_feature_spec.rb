@@ -13,7 +13,7 @@ describe "User Pages >" do
 		end
 
         it "should have the base and page title" do
-            should have_title("Web Template | Sign Up")
+            should have_title("Github Profiler | Sign Up")
         end
     end
 
@@ -26,7 +26,7 @@ describe "User Pages >" do
 		end
 
         it "should have the base and page title" do
-            should have_title("Web Template | Sign In")
+            should have_title("Github Profiler | Sign In")
         end
     end
 
@@ -42,7 +42,7 @@ describe "User Pages >" do
   		end
 
   		it "should have the base and page title" do
-            should have_title("Web Template | Account")
+            should have_title("Github Profiler | Account")
         end
     end 
 
@@ -58,7 +58,7 @@ describe "User Pages >" do
   		end
 
   		it "should have the base and page title" do
-            should have_title("Web Template | Profile")
+            should have_title("Github Profiler | Profile")
         end
     end 
 
@@ -74,7 +74,7 @@ describe "User Pages >" do
       end
 
       it "should have the base and page title" do
-            should have_title("Web Template | Github Profile")
+            should have_title("Github Profiler | Github Profile")
         end
     end 
 

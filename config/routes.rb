@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-    devise_for :users
+    devise_for :users 
+
+    # resources :gitlinks
     
     root to: 'static_pages#home'
 
@@ -22,6 +24,8 @@ Rails.application.routes.draw do
     end
 
     match "/create_gitlink/:user/:content", to: "gitlinks#create", via: "post"
+
+    match '/saved_links', to: 'gitlinks#saved_links', via: 'get'
 
 
       # The priority is based upon order of creation: first created -> highest priority.

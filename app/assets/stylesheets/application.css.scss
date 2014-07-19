@@ -373,6 +373,49 @@ input[type=submit] {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.bbbb {
+  background-color: #96aa96;
+  border: 1px solid #829682;
+  border-radius: 10px;
+  font-family: Helvetica Neue;
+  width: 800px;
+  padding-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+  li a:hover {
+    color: blue;
+  }
+}
+
+.cccc {
+  background-color: #D4B286;
+  border: 1px solid #B49B8A;
+  border-radius: 10px;
+  font-family: Helvetica Neue;
+  width: 522px;
+  padding-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1px;
+  padding-left: 20px;
+}
+
+.cccc li {
+  margin-left: 10px;
+  padding-bottom: 8px;
+  a:hover {
+    color: blue;
+  }
+}
+
 .search-profile-data-header {
   text-decoration: none;
   font-size: 2em;

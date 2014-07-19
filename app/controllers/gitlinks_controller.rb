@@ -6,6 +6,14 @@ class GitlinksController < ApplicationController
  #    	@gitlink = Gitlink.new
  #  	end
 
+	def index
+    	@gitlinks = Gitlink.all
+	end
+
+	def saved_links
+		@saved_links = current_user.gitlinks
+	end
+
 	def create
 		current_user = User.find params[:user]
 		if Gitlink.exists?(:user_id => current_user.id, link: params[:content])
@@ -22,6 +30,3 @@ class GitlinksController < ApplicationController
   	end
 
 end
-
-
-  

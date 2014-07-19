@@ -8,12 +8,12 @@ describe "Static pages: " do
 		
 		before (:each) { visit root_path }
 
-		it "should have the title \'Web Templates | Home\'" do
-			should have_title("Web Template | Home")
+		it "should have the title \'Github Profiler | Home\'" do
+			should have_title("Github Profiler | Home")
 		end
 
-		it "should have the content \'Web Templates\'" do
-			should have_content("WEB TEMPLATE")
+		it "should have the content \'GITHUB PROFILER\'" do
+			should have_content("GITHUB PROFILER")
 		end
 	end
 
@@ -21,13 +21,13 @@ describe "Static pages: " do
 		
 		before (:each) { visit home_path }
 
-		it "should have the title \'Web Template | Home\'" do
-			should have_title("Web Template | Home")
-		end		
+		it "should have the title \'Github Profiler | Home\'" do
+			should have_title("Github Profiler | Home")
+		end
 
-		it "should have the content 'Web Template'" do
-			should have_content("WEB TEMPLATE")
-		end	
+		it "should have the content \'GITHUB PROFILER\'" do
+			should have_content("GITHUB PROFILER")
+		end
 
 		it "should have links for \'Sign up\' and \'Sign in\' if user is not signed in" do
 	    	expect(page).to have_link 'Sign up'
@@ -54,8 +54,8 @@ describe "Static pages: " do
 
 		before (:each) { visit about_path }
 		
-		it "should have the title \'Web Template | About\'" do
-			should have_title("Web Template | About")
+		it "should have the title \'Github Profiler | About\'" do
+			should have_title("Github Profiler | About")
 		end
 
 		it "should have the content \'About Us\'" do
@@ -67,8 +67,8 @@ describe "Static pages: " do
 	
 		before (:each) { visit contact_path }
 
-		it "should have the title \'Web Template | Contact\'" do
-			should have_title("Web Template | Contact")
+		it "should have the title \'Github Profiler | Contact\'" do
+			should have_title("Github Profiler | Contact")
 		end
 
 		it "should have the content \'Contact Us\'" do
@@ -80,8 +80,8 @@ describe "Static pages: " do
 
 		before (:each) { visit help_path }
 		
-		it "should have the content \'Web Template | Help\'" do
-			should have_title("Web Template | Help")
+		it "should have the content \'Github Profiler | Help\'" do
+			should have_title("Github Profiler | Help")
 		end
 
 		it "should have the content \'Help\'" do

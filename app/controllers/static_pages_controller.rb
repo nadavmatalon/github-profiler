@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
 
   def help
   end
-
+  
   def profile
     if current_user.nil?
       redirect_to '/home'

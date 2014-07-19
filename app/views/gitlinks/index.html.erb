@@ -1,0 +1,11 @@
+<% provide(:page_title, "") %>
+
+<% if @gitlinks.any? %>
+	<ul>
+		<% @gitlinks.each do |gitlink| %>
+			<li><%= gitlink.link  %></li>
+        <% end %>
+ 	</ul>
+<% else %>
+	<h1>No gitlinks yet</h1>
+<% end %>
