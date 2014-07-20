@@ -85,7 +85,7 @@ describe "User Pages >" do
 			click_link 'Sign out'
   		  	should have_content 'Welcome user'
   		  	sign_in
-  		  	should have_content 'Welcome Ja'
+  		  	should have_content 'Welcome ja'
 			click_link 'Sign out'
   		  	should have_content 'Welcome user'
   		end
