@@ -32,7 +32,7 @@
                     <% else %>
                         <li class="sign-up"><%= link_to "Sign up", new_user_registration_path, id: "nav-button" %></li>
                         <li class="sign-in"><%= link_to "Sign in", new_user_session_path, id: "nav-button" %></li>
-                        <li class="sign-in-facebook"><%= link_to "Facebook Sign in", user_omniauth_authorize_path(:facebook), id: "fb-sign-in-button" %></li>
+                        <li class="sign-in-github"><%= link_to "Github Sign in", user_omniauth_authorize_path(:github), id: "gh-sign-in-button" %></li>
                     <% end %>
                 </ul>
             </nav>

@@ -60,7 +60,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 
 # https://github.com/mkdynamic/omniauth-facebook
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
 
 
 group :doc do

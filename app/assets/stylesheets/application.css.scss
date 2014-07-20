@@ -180,9 +180,10 @@ $grayMediumLight: #eaeaea;
   letter-spacing: 0.02em;
   font-weight: 500;
   line-height: 20px;
-  margin-right: auto;
+  // margin-right: auto;
   color: red;
-  margin-left: 150px;
+  margin-left: 80px;
+  width: 270px;
 }
 
 .notice-message {
@@ -192,9 +193,10 @@ $grayMediumLight: #eaeaea;
   letter-spacing: 0.02em;
   font-weight: 500;
   line-height: 20px;
-  margin-right: auto;
+  // margin-right: auto;
   color: green;
-  margin-left: 150px;
+  margin-left: 80px;
+  width: 270px;
 }
 
 .alert-message {

@@ -14,15 +14,16 @@
         <%= render 'layouts/footer' %>
         <script>              
             <% if current_user != nil %>
-                var current_user = "<%= current_user.username %>"
+                var current_user_email = "<%= current_user.email %>";
+                var current_user_username = "<%= current_user.username %>";
                 var app = angular.module('WebTemplate', []);
                 app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
-                    $http.get('https://api.github.com/users/' + current_user).
+                    $http.get('https://api.github.com/users/' + current_user_username).
                     success(function(profileData, status) {
                         $(".github-profile").removeClass('hidden')
                         $scope.user_avatar = profileData.avatar_url;
                         $scope.username = profileData.login;
-                        $scope.email = profileData.email || "";
+                        $scope.email = profileData.email || current_user_email ;
                         $scope.html_url = profileData.html_url;
                         $scope.date = profileData.created_at;
                         $scope.publicRepos = profileData.public_repos || "0";
@@ -98,51 +99,3 @@
 </html>
 
 
-
-
-
-
-<!-- get list of repos for a user:
-https://api.github.com/users/technoweenie/repos
- -->
-
- <!--            // function getProfile(username) {
-            //     $.get('https://api.github.com/users/' + username, function(user) {
-            //         var newProfile = Mustache.render($('#profile-template').html(), user);
-            //         $(".myID").prepend(user.id);
-            //         $('.profile-container').prepend(newProfile);
-            //     }).error(function() {
-            //         alert("There is no user called " + username);
-            //     }).always(function() {
-            //         // $('#username').val('');
-            //     })
-            // }
-
-            // function getProfile(username) {
-            //     $.get('https://api.github.com/users/' + username, function(user) {
-            //             var user_id = user.id;
-
-            //     });
-            // };
- -->
-
- <!--      
-      <div class="user-session-control">
-        <%= form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
-            <%= f.label :email %>
-            <%= f.email_field :email, required: "true" %>
-            <%= f.label :password %>
-            <%= f.password_field :password, required: "true", autocomplete: "off" %>
-            <%= f.check_box :remember_me %> 
-            <%= f.label :remember_me %>
-            <span class="log-in-button">
-            <%= f.submit "Log in", id: "log-in" %>
-            </span>
-            <span class="sign-up-button">
-            <%= link_to "Sign up", new_user_registration_path, class: "sign-up" %>
-            </span>
-            <span class="log-out-button">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "log-out" %>
-          </span>
-        <% end %>
-    </div> -->
