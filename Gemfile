@@ -53,6 +53,16 @@ gem 'websocket-rails'
 # https://github.com/macournoyer/thin/
 gem 'thin'
 
+# https://github.com/intridea/omniauth
+gem 'omniauth'
+
+# https://github.com/intridea/omniauth-github
+gem 'omniauth-github'
+
+# https://github.com/mkdynamic/omniauth-facebook
+gem 'omniauth-facebook'
+
+
 group :doc do
     # https://github.com/voloko/sdoc
     gem 'sdoc', '~> 0.4.0'

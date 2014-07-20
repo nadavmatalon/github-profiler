@@ -28,13 +28,13 @@
                         <li class="github-profile"><%= link_to "Github Profile", github_profile_path, id: "nav-button" %></li>
                         <!-- <li class="github-profile hidden"><%= link_to "Github Profile", github_profile_path, id: "nav-button" %></li> -->
                         <li class="account"><%= link_to "Account", edit_user_registration_path, id: "nav-button" %></li>
-                        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, id: "nav-button" %></li>
+                        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, id: "sign-out-button" %></li>
                     <% else %>
                         <li class="sign-up"><%= link_to "Sign up", new_user_registration_path, id: "nav-button" %></li>
                         <li class="sign-in"><%= link_to "Sign in", new_user_session_path, id: "nav-button" %></li>
+                        <li class="sign-in-facebook"><%= link_to "Facebook Sign in", user_omniauth_authorize_path(:facebook), id: "fb-sign-in-button" %></li>
                     <% end %>
                 </ul>
-                </div>
             </nav>
         </div>
     </div>

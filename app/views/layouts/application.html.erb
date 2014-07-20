@@ -22,7 +22,7 @@
                         $(".github-profile").removeClass('hidden')
                         $scope.user_avatar = profileData.avatar_url;
                         $scope.username = profileData.login;
-                        $scope.email = profileData.email || "n/a";
+                        $scope.email = profileData.email || "";
                         $scope.html_url = profileData.html_url;
                         $scope.date = profileData.created_at;
                         $scope.publicRepos = profileData.public_repos || "0";

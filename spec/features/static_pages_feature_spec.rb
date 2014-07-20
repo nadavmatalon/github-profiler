@@ -46,7 +46,7 @@ describe "Static pages: " do
 
   		it "should have the content \'Welcome @username\' if user signed in" do
 			sign_up
-	    	expect(page).to have_content 'Welcome ja'
+	    	expect(page).to have_content 'Welcome Ja'
   		end
     end
 

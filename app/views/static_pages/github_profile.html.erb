@@ -13,7 +13,7 @@
 			    <ul class="search-profile">
 					<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
 					<li class="search-profile-data"> {{ email }} </li>
-					<li class="search-profile-data"><a href=<%= "http://www.github.com/{{username}}" %>> {{ html_url }} </a></li>
+					<li class="search-profile-data"><a href=<%= "http://www.github.com/#{current_user.username.downcase}" %>> <%= "http://www.github.com/#{current_user.username.downcase}" %> </a></li>
 					<li class="search-profile-data"> Joined on: {{ date | date:'d-MM-yyyy' }} </li>
 					<li class="search-profile-data"> Following: {{ following }} </li>
 					<li class="search-profile-data"> Followers: {{ followers }} </li>
