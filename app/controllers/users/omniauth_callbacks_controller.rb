@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         puts ("|----------------------------------|")
         if @user.present?
             sign_in @user
-            current_user = @user
+            @current_user = @user
             redirect_to root_path(@user)
             set_flash_message(:notice, :success, :kind => "Github") if is_navigational_format?
         else
@@ -29,6 +29,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
  #            set_flash_message(:notice, :faliure, :kind => "Facebook") if is_navigational_format?
  #      		redirect_to home_path
  #    	end
- #  	end
+ #  end
 
 end
