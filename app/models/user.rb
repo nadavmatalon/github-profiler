@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
 
 	# Include default devise modules. Others available are:
-	# :confirmable, :lockable, :timeoutable and :omniauthable, :validatable
-  	devise 	:database_authenticatable, :registerable,
+	# :confirmable, :lockable, :timeoutable and :omniauthable, :validatable,
+  	devise 	:database_authenticatable, :registerable, 
        		:recoverable, :rememberable, :trackable, 
             :omniauthable, :omniauth_providers => [:github],
             authentication_keys: [:username]
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
         where(auth.slice(:provider, :uid)).first_or_create do |user|
             user.name = auth.info.name || "n/a"
             user.username = auth.info.nickname
-            user.email = auth.info.email
+            user.email = auth.info.email || "na@email.com"
     #       user.image = auth.info.image 
             user.password = Devise.friendly_token[0,20]
         end
