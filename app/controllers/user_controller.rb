@@ -1,10 +1,10 @@
-class UsersController < ApplicationController::Base
+class UsersController < ApplicationController
 
-	# def create
- #    	super
- #  	end
+	def create
+    	super
+  	end
 
- # 	def show
- # 	end
+ 	def show
+ 	end
 
 end
