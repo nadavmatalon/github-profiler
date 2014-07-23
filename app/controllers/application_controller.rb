@@ -15,7 +15,4 @@ class ApplicationController < ActionController::Base
     	devise_parameter_sanitizer.for(:password_new) { |u| u.permit(:name, :username, :email, :password, :password_confirmation, :current_password) }
   	end
 
-
-
-    
 end
