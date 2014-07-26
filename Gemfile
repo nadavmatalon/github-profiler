@@ -61,6 +61,9 @@ gem 'omniauth-github'
 # https://github.com/aws/aws-sdk-ruby
 gem 'aws-sdk'
 
+# https://github.com/octokit/octokit.rb#hypermedia-agent
+gem "octokit", "~> 3.0"
+
 # https://github.com/mkdynamic/omniauth-facebook
 # gem 'omniauth-facebook'
 

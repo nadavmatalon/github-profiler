@@ -14,7 +14,7 @@
 					<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
 					<li class="search-profile-data"> {{ email }} </li>
 					<li class="search-profile-data"><a href=<%= "http://www.github.com/#{current_user.username.downcase}" %>> <%= "http://www.github.com/#{current_user.username.downcase}" %> </a></li>
-					<li class="search-profile-data"> Joined on: {{ date | date:'d-MM-yyyy' }} </li>
+					<li class="search-profile-data"> Joined: {{ date | date:'d-MM-yyyy' }} </li>
 					<li class="search-profile-data"> Following: {{ following }} </li>
 					<li class="search-profile-data"> Followers: {{ followers }} </li>
 					<li class="search-profile-data"> Public repos: {{ publicRepos }} </li>
@@ -22,11 +22,29 @@
 			</form>
 		</div>
 	</div>
-	
+
 	<div class="cccc">
+		<% @user = Octokit.user current_user.username %>
+		<% @public_repos = @user.rels[:repos].get.data %>
+		<ul>
+			<li class="search-profile-data-header" id="profile-username">Public Repos</li>
+			<% if @public_repos %>
+				<% @public_repos.each do |repo| %>
+					<li class="repo-profile-header"><a href=<%= "#{repo.html_url}" %>><%= repo.name %></a></li>
+					<li class="repo-profile-data"><%= repo.description %></li>
+					<li class="repo-profile-data">created: <%= repo.created_at.strftime("%Y-%m-%d") %> | updated: <%= repo.updated_at.strftime("%Y-%m-%d") %> | forks: <%= repo.forks %> | watchers: <%= repo.watchers || 0 %> | open issues: <%= repo.open_issues %></li>
+				<% end %>
+			<% else %>
+				<li class="search-profile-data"><%= "No public repos" %></li>
+        	<% end %>
+ 		</ul>
+	</div>
+
+	
+	<div class="dddd">
 		<% @saved_links = current_user.gitlinks %>
 			<ul>
-				<li class="search-profile-data-header" id="profile-username">Saved Links</li>
+				<li class="search-profile-data-header" id="profile-username">Saved Profiles</li>
 				<% if @saved_links.any? %>
 					<% @saved_links.each do |gitlink| %>
 						<li class="search-profile-data"><a href=<%= "http://www.github.com/#{gitlink.link}" %>><%= gitlink.link %></a></li>

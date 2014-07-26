@@ -25,6 +25,8 @@ class GitlinksController < ApplicationController
 		redirect_to '/home' unless request.xhr?
 	end
 
+	private
+
 	def gitlinks_params
     	params[:create_gitlink].permit(:user, :link)
   	end
