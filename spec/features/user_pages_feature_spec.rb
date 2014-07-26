@@ -83,11 +83,11 @@ describe "User Pages >" do
 		it "sign in and then sign out" do
 	    	sign_up
 			click_link 'Sign out'
-  		  	should have_content 'Welcome user'
+  		  	should have_content 'Welcome Guest'
   		  	sign_in
   		  	should have_content 'Welcome ja'
 			click_link 'Sign out'
-  		  	should have_content 'Welcome user'
+  		  	should have_content 'Welcome Guest'
   		end
     end     
 end

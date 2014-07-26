@@ -40,8 +40,8 @@ describe "Static pages: " do
   		  	expect(page).to have_link 'Sign out'
   		end
 
-  		it "should have the content \'Welcome user\' if user isn\'t signed in" do
-	    	expect(page).to have_content 'Welcome user'
+  		it "should have the content \'Welcome Guest\' if user isn\'t signed in" do
+	    	expect(page).to have_content 'Welcome Guest'
   		end
 
   		it "should have the content \'Welcome @username\' if user signed in" do
