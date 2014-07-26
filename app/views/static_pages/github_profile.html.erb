@@ -24,7 +24,8 @@
 	</div>
 
 	<div class="cccc">
-		<% @user = Octokit.user current_user.username %>
+		<% client = Octokit::Client.new(access_token: Rails.application.secrets.github_api_token) %>
+		<% @user = client.user current_user.username %>
 		<% @public_repos = @user.rels[:repos].get.data %>
 		<ul>
 			<li class="search-profile-data-header" id="profile-username">Public Repos</li>
@@ -32,50 +33,33 @@
 				<% @public_repos.each do |repo| %>
 					<li class="repo-profile-header"><a href=<%= "#{repo.html_url}" %>><%= repo.name %></a></li>
 					<li class="repo-profile-data"><%= repo.description %></li>
-					<li class="repo-profile-data">created: <%= repo.created_at.strftime("%Y-%m-%d") %> | updated: <%= repo.updated_at.strftime("%Y-%m-%d") %> | forks: <%= repo.forks %> | watchers: <%= repo.watchers || 0 %> | open issues: <%= repo.open_issues %></li>
+					<li class="repo-profile-data">created: <%= repo.created_at.strftime("%d-%m-%Y") %> | updated: <%= repo.updated_at.strftime("%d-%m-%Y") %> | forks: <%= repo.forks || 0 %> | watchers: <%= repo.watchers || 0 %> | open issues: <%= repo.open_issues || 0 %></li>
 				<% end %>
 			<% else %>
 				<li class="search-profile-data"><%= "No public repos" %></li>
         	<% end %>
  		</ul>
 	</div>
-
 	
 	<div class="dddd">
 		<% @saved_links = current_user.gitlinks %>
 			<ul>
 				<li class="search-profile-data-header" id="profile-username">Saved Profiles</li>
 				<% if @saved_links.any? %>
-					<% @saved_links.each do |gitlink| %>
-						<li class="search-profile-data"><a href=<%= "http://www.github.com/#{gitlink.link}" %>><%= gitlink.link %></a></li>
-					<% end %>
+					<div class="saved-profile-container">
+						<% @saved_links.each do |gitlink| %>
+							<% saved_profile = client.user gitlink.link %>
+							<div class="signle-saved-profile-container">
+		    					<div class="saved_profile_avatar"><img ng-src=<%= saved_profile.avatar_url %>></a><br/></div>
+								<div class="search-profile-data"><a href=<%= "http://www.github.com/#{gitlink.link}" %>><%= gitlink.link %></a></div>
+							</div>
+						<% end %>
+					</div>
 				<% else %>
 						<li class="search-profile-data"><%= "No saved links yet" %></li>
         		<% end %>
  			</ul>
 	</div>
-  
-
-<!-- 	<div class="sign-up-form">	
-		<ul class="edit-accout-form">
-			<li class="profile-header-form profile-avatar"><img ng-src= "{{ user_avatar }}"></li>
-			<li class="profile-header-form">Username</li>
-			<li class="profile-content-form"> {{ username }} </li>
-			<li class="profile-header-form">Email</li>
-			<li class="profile-content-form"> {{ email }} </li>
-			<li class="profile-header-form">URL</li>
-			<li class="profile-content-form"> {{ html_url }} </li>
-			<li class="profile-header-form">Joined on</li>
-			<li class="profile-content-form"> {{ date  | date:'d-MM-yyyy' }} </li>
-			<li class="profile-header-form">Following</li>
-			<li class="profile-content-form"> {{ following }} </li>
-			<li class="profile-header-form">Followers</li>
-			<li class="profile-content-form"> {{ followers }} </li>
-			<li class="profile-header-form">Public Repos</li>
-			<li class="profile-content-form"> {{ publicRepos }} </li>
-		</ul>
-	</div> -->
-
 	<%= render "devise/shared/links" %>
 </div>
 
