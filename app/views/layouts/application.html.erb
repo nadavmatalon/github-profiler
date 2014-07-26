@@ -14,24 +14,27 @@
         <%= render 'layouts/footer' %>
         <script>              
             <% if current_user != nil %>
-
                 var current_user_email = "<%= current_user.email %>";
                 var current_user_username = "<%= current_user.username %>";
                 var auth_token = "?access_token=<%= Rails.application.secrets.github_api_token %>"
                 var app = angular.module('WebTemplate', []);
                 app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
                     $http.get('https://api.github.com/users/' + current_user_username + auth_token).
-                    success(function(profileData, status) {
+                    success(function(profileData) {
                         $(".github-profile").removeClass('hidden')
-                        $scope.user_avatar = profileData.avatar_url;
                         $scope.username = profileData.login;
-                        $scope.email = profileData.email || current_user_email ;
+                        $scope.name = profileData.name || "n/a";
+                        $scope.location = profileData.location || "n/a";
+                        $scope.email = profileData.email || current_user_email || "n/a";
                         $scope.html_url = profileData.html_url;
+                        $scope.user_avatar = profileData.avatar_url;
                         $scope.date = profileData.created_at;
                         $scope.publicRepos = profileData.public_repos || "0";
                         $scope.following = profileData.following || "0";
                         $scope.followers = profileData.followers || "0";
-                    }).error(function(profileData, status) {
+                    }).error(function(profileData) {
+                        $scope.name = "n/a";
+                        $scope.location = "n/a";
                         $scope.avatar = "github_avatar.png";
                         $scope.username = "n/a";
                         $scope.email = "n/a";
@@ -40,7 +43,6 @@
                         $scope.publicRepos = "n/a";
                         $scope.following = "n/a";
                         $scope.followers = "n/a";
-                        $scope.message = status;
                     });
                 }]);
             <% else %>
@@ -61,10 +63,12 @@
                             // $("#save-profile").removeClass('hide');
                             $(".aaaa").addClass('show');
                             $(".aaaa").removeClass('hidden');
-                            $scope.avatar = userData.avatar_url || "";
                             $scope.username = userData.login;
+                            $scope.name = userData.name || "n/a";
+                            $scope.location = userData.location || "n/a";
                             $scope.email = userData.email || "n/a";
                             $scope.html_url = userData.html_url;
+                            $scope.avatar = userData.avatar_url || "";
                             $scope.date = userData.created_at;
                             $scope.publicRepos = userData.public_repos || "0";
                             $scope.following = userData.following || "0";

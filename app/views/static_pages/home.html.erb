@@ -18,8 +18,11 @@
 			<form id='save_profile-form'>
 			    <ul class="search-profile">
 					<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
-					<li class="search-profile-data"> {{ email }} </li>
-					<li class="search-profile-data"> {{ html_url }} </li>
+
+					<li class="search-profile-data"> Name: {{ name }} </li>
+					<li class="search-profile-data"> Location: {{ location }} </li>
+					<li class="search-profile-data"> Email: {{ email }} </li>
+					<li class="search-profile-data"> Github page: {{ html_url }} </li>
 					<li class="search-profile-data"> Joined on: {{ date | date:'d-MM-yyyy' }} </li>
 					<li class="search-profile-data"> Following: {{ following }} </li>
 					<li class="search-profile-data"> Followers: {{ followers }} </li>
