@@ -14,11 +14,13 @@
         <%= render 'layouts/footer' %>
         <script>              
             <% if current_user != nil %>
+
                 var current_user_email = "<%= current_user.email %>";
                 var current_user_username = "<%= current_user.username %>";
+                var auth_token = "?access_token=<%= Rails.application.secrets.github_api_token %>"
                 var app = angular.module('WebTemplate', []);
                 app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
-                    $http.get('https://api.github.com/users/' + current_user_username).
+                    $http.get('https://api.github.com/users/' + current_user_username + auth_token).
                     success(function(profileData, status) {
                         $(".github-profile").removeClass('hidden')
                         $scope.user_avatar = profileData.avatar_url;
@@ -47,8 +49,9 @@
 
             app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
                 $scope.loadUser = function() {
+                    var auth_token = "?access_token=<%= Rails.application.secrets.github_api_token %>"
                     if ($scope.username_input) {
-                        $http.get('https://api.github.com/users/' + $scope.username_input).
+                        $http.get('https://api.github.com/users/' + $scope.username_input + auth_token).
                         success(function(userData) {
                             $("#save-profile").removeClass('disable_button');
                             $("#save-profile").val("Save Profile");
@@ -58,7 +61,7 @@
                             // $("#save-profile").removeClass('hide');
                             $(".aaaa").addClass('show');
                             $(".aaaa").removeClass('hidden');
-                            $scope.avatar = userData.avatar_url;
+                            $scope.avatar = userData.avatar_url || "";
                             $scope.username = userData.login;
                             $scope.email = userData.email || "n/a";
                             $scope.html_url = userData.html_url;
