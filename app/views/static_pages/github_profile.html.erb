@@ -29,14 +29,14 @@
 		<% @public_repos = @user.rels[:repos].get.data %>
 		<ul>
 			<li class="search-profile-data-header" id="profile-username">Public Repos</li>
-			<% if @public_repos %>
+			<% if @public_repos != [] %>
 				<% @public_repos.each do |repo| %>
 					<li class="repo-profile-header"><a href=<%= "#{repo.html_url}" %>><%= repo.name %></a></li>
 					<li class="repo-profile-data"><%= repo.description %></li>
 					<li class="repo-profile-data">created: <%= repo.created_at.strftime("%d-%m-%Y") %> | updated: <%= repo.updated_at.strftime("%d-%m-%Y") %> | forks: <%= repo.forks || 0 %> | watchers: <%= repo.watchers || 0 %> | open issues: <%= repo.open_issues || 0 %></li>
 				<% end %>
 			<% else %>
-				<li class="search-profile-data"><%= "No public repos" %></li>
+				<li class="search-profile-data"><%= "No public repos available" %></li>
         	<% end %>
  		</ul>
 	</div>
@@ -56,7 +56,7 @@
 						<% end %>
 					</div>
 				<% else %>
-						<li class="search-profile-data"><%= "No saved links yet" %></li>
+						<li class="search-profile-data"><%= "No saved profiles yet" %></li>
         		<% end %>
  			</ul>
 	</div>
