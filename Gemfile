@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
- ruby '2.1.1'
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
@@ -31,7 +31,6 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
 # https://github.com/plataformatec/devise
 gem 'devise'
 
@@ -59,9 +58,11 @@ gem 'omniauth'
 # https://github.com/intridea/omniauth-github
 gem 'omniauth-github'
 
+# https://github.com/aws/aws-sdk-ruby
+gem 'aws-sdk'
+
 # https://github.com/mkdynamic/omniauth-facebook
 # gem 'omniauth-facebook'
-
 
 group :doc do
     # https://github.com/voloko/sdoc
@@ -89,11 +90,11 @@ group :test, :development do
     # https://github.com/DatabaseCleaner/database_cleaner
     gem 'database_cleaner'
     # https://github.com/teampoltergeist/poltergeist
-    # gem 'poltergeist'
+    gem 'poltergeist'
     # https://github.com/dockyard/capybara-email
-    # gem 'capybara-email'
+    gem 'capybara-email'
     # https://github.com/sj26/mailcatcher    
-    # gem 'mailcatcher'
+    gem 'mailcatcher'
 end
 
 group :development do

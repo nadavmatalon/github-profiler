@@ -87,5 +87,5 @@ production:
   <<: *default
   database: web_template_production
   username: web_template
-  password: <%= ENV['WEB_TEMPLATE_DATABASE_PASSWORD'] %>
+  password: <%= Rails.application.secrets.database_secret_key %>
  # timeout: 5000
