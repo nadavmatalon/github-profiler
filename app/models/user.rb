@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
             user.location = auth.extra.raw_info.location
             user.email = auth.extra.raw_info.email
             user.url = auth.extra.raw_info.html_url
-            # user.github_id = auth.extra.raw_info.id
+            user.github_id = auth.extra.raw_info.id
             user.password = Devise.friendly_token[0,20]
         end
     end
