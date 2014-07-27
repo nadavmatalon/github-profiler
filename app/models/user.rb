@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
         end
     end
 
-
     # for facebook:
 
     # def self.from_omniauth(auth)
