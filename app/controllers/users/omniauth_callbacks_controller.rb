@@ -2,9 +2,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     def github
         @user = User.from_omniauth(request.env["omniauth.auth"])
-        puts ("|----------------------------------|")
-        puts (@user)
-        puts ("|----------------------------------|")
+        # puts ("|----------------------------------|")
+        # puts (@user)
+        # puts ("|----------------------------------|")
         if @user.present?
             sign_in @user
             @current_user = @user
