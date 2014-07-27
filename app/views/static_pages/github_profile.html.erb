@@ -5,17 +5,28 @@
 	<h2 class="page-title">Github Profile</h2>
 	
 	<div class="bbbb">
+		<% client = Octokit::Client.new(access_token: Rails.application.secrets.github_api_token) %>
+		<% begin @user = client.user current_user.username rescue @user = nil end %>
+
 	    <div class="git-profile-avatar">
 	    	<img ng-src="{{ user_avatar }}">
 	    </div>
 		<div class="git-profile-info">
 			<form id='save_profile-form'>
 			    <ul class="search-profile">
-					<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
+			    	<% if @user != nil %>
+						<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
+					<% else %> 
+						<li class="search-profile-data-header" id="profile-username"> <%= current_user.username %> </li>
+					<% end %>
 					<li class="search-profile-data"> Name: {{ name }} </li>
 					<li class="search-profile-data"> Location: {{ location }} </li>
 					<li class="search-profile-data"> Email: {{ email }} </li>
-					<li class="search-profile-data"> Github page: <a href=<%= "http://www.github.com/#{current_user.username.downcase}" %>> <%= "http://www.github.com/#{current_user.username.downcase}" %> </a></li>
+					<% if @user != nil %>
+						<li class="search-profile-data"> Github page: <a href=<%= "http://www.github.com/#{current_user.username.downcase}" %>> <%= "http://www.github.com/#{current_user.username.downcase}" %> </a></li>
+					<% else %> 
+						<li class="search-profile-data"> Github page: n/a</li>
+					<% end %>
 					<li class="search-profile-data"> Joined: {{ date | date:'d-MM-yyyy' }} </li>
 					<li class="search-profile-data"> Following: {{ following }} </li>
 					<li class="search-profile-data"> Followers: {{ followers }} </li>
@@ -26,9 +37,11 @@
 	</div>
 
 	<div class="cccc">
-		<% client = Octokit::Client.new(access_token: Rails.application.secrets.github_api_token) %>
-		<% @user = client.user current_user.username %>
-		<% @public_repos = @user.rels[:repos].get.data %>
+		<% if @user != nil %>
+			<% @public_repos = @user.rels[:repos].get.data %>
+		<% else %> 
+			<% @public_repos = [] %>
+		<% end %>
 		<ul>
 			<li class="search-profile-data-header" id="profile-username">Public Repos</li>
 			<% if @public_repos != [] %>

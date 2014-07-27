@@ -1,18 +1,36 @@
 <% provide(:page_title, "Profile") %>
 
-<h2 class="page-title">User Profile</h2>
+<h2 class="page-title">Profile</h2>
+
+<div ng-controller="GitProfileController">
+	<div class="eeee">
+	    <div class="git-profile-avatar">
+	    	<img ng-src="{{ user_avatar }}">
+	    </div>
+	    </div>
+</div>
                  
 <div class="sign-up-form">	
 	<ul class="edit-accout-form">
-		<li class="profile-header-form profile-avatar"><img ng-src= "{{ avatar }}"></li>
-		<li class="profile-header-form">Name</li>
-		<li class="profile-content-form"><%= current_user.name %></li>
 		<li class="profile-header-form">Username</li>
 		<li class="profile-content-form"><%= current_user.username %></li>
+		<li class="profile-header-form">Name</li>
+		<li class="profile-content-form"><%= current_user.name != "" ? current_user.name : "n/a" %></li>
+		<li class="profile-header-form">Location</li>
+		<li class="profile-content-form"><%= current_user.location != "" ? current_user.location : "n/a" %></li>
 		<li class="profile-header-form">Email</li>
-		<li class="profile-content-form"><%= current_user.email %></li>
+		<li class="profile-content-form"><%= current_user.email != "" ? current_user.email : "n/a" %></li>
+		<li class="profile-header-form">Github Page</li>
+		<li class="profile-content-form"><%= current_user.url != "" ? urrent_user.url : "n/a" %></li>
 	</ul>
 </div>
 
 
 <%= render "devise/shared/links" %>
+
+
+<!-- current_user.username +'?access_token=<%= Rails.application.secrets.github_api_token %>' -->
+
+
+
+

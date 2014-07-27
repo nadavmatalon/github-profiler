@@ -27,7 +27,7 @@
                         $scope.location = profileData.location || "n/a";
                         $scope.email = profileData.email || current_user_email || "n/a";
                         $scope.html_url = profileData.html_url;
-                        $scope.user_avatar = profileData.avatar_url;
+                        $scope.user_avatar = profileData.avatar_url || "github_avatar.png";
                         $scope.date = profileData.created_at;
                         $scope.publicRepos = profileData.public_repos || "0";
                         $scope.following = profileData.following || "0";
@@ -35,7 +35,7 @@
                     }).error(function(profileData) {
                         $scope.name = "n/a";
                         $scope.location = "n/a";
-                        $scope.avatar = "github_avatar.png";
+                        $scope.user_avatar = "github_avatar.png";
                         $scope.username = "n/a";
                         $scope.email = "n/a";
                         $scope.html_url = "n/a";
@@ -68,7 +68,7 @@
                             $scope.location = userData.location || "n/a";
                             $scope.email = userData.email || "n/a";
                             $scope.html_url = userData.html_url;
-                            $scope.avatar = userData.avatar_url || "";
+                            $scope.avatar = userData.avatar_url;
                             $scope.date = userData.created_at;
                             $scope.publicRepos = userData.public_repos || "0";
                             $scope.following = userData.following || "0";

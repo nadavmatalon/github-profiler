@@ -53,8 +53,8 @@ describe "User Pages >" do
     		click_link 'Profile'
     	end
 
-		it "should have the content \'User Profile\'" do
-  		  	should have_content 'User Profile'
+		it "should have the content \'Profile\'" do
+  		  	should have_content 'Profile'
   		end
 
   		it "should have the base and page title" do

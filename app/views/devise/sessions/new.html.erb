@@ -5,14 +5,14 @@
 <div>
 	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 		<ul class="sign-in-form">
-	  		<li><%= f.label :username %></li>
-	  		<li><%= f.text_field :username, autofocus: true %></li>
+	  		<li id="form-header-label"><%= f.label :username, "Username*" %></li>
+	  		<li id="form-text-field"><%= f.text_field :username, autofocus: true %></li>
 
-	  		<li><%= f.label :password %></li>
-	    	<li><%= f.password_field :password, autocomplete: "off" %></li>
+	  		<li id="form-header-label"><%= f.label :password, "Password*" %></li>
+	    	<li id="form-text-field"><%= f.password_field :password, autocomplete: "off" %></li>
 
 	  		<% if devise_mapping.rememberable? -%>
-	    		<li><%= f.check_box :remember_me %> <%= f.label :remember_me %></li>
+	    		<li id="form-header-remember_me"><%= f.check_box :remember_me %> <%= f.label :remember_me %></li>
 	  		<% end %>
 	  		<li><%= f.submit "Sign in" %></li>
 	  	</ul>

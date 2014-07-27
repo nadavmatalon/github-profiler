@@ -6,21 +6,27 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <ul class="edit-accout-form">
 
-            <li><%= f.label :name %></li>
-            <li><%= f.text_field :name, autofocus: true %></li>
+            <li id="form-header-label"><%= f.label :username, autofocus: true %></li>
+            <li id="form-text-field"><%= f.text_field :username %></li>
 
-            <li><%= f.label :username %></li>
-            <li><%= f.text_field :username %></li>
+            <li id="form-header-label"><%= f.label :name %></li>
+            <li id="form-text-field"><%= f.text_field :name %></li>
 
-            <li><%= f.label :email %></li>
-            <li><%= f.text_field :email %></li>
+            <li id="form-header-label"><%= f.label :location %></li>
+            <li id="form-text-field"><%= f.text_field :location %></li>
 
-            <li><%= f.label :password %><br/>
+            <li id="form-header-label"><%= f.label :email %></li>
+            <li id="form-text-field"><%= f.text_field :email %></li>
+
+            <li id="form-header-label"><%= f.label :url, "Github Page" %></li>
+            <li id="form-text-field"><%= f.text_field :url %></li>
+
+            <li id="form-header-label"><%= f.label :password %><br/>
                 <i>(leave blank to keep unchanged)</i></li>
-            <li><%= f.password_field :password, autocomplete: "off" %></li>
+            <li id="form-text-field"><%= f.password_field :password, autocomplete: "off" %></li>
 
-            <li><%= f.label :password_confirmation %></li>
-            <li><%= f.password_field :password_confirmation, autocomplete: "off" %></li>
+            <li id="form-header-label"><%= f.label :password_confirmation %></li>
+            <li id="form-text-field"><%= f.password_field :password_confirmation, autocomplete: "off" %></li>
             <!-- <li><%= f.label :current_password %><br/> -->
                 <!-- <i>(current password needed to confirm changes)</i></li> -->
             <!-- <li><%= f.password_field :current_password, autocomplete: "off" %></li> -->
