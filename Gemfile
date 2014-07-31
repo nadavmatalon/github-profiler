@@ -86,6 +86,8 @@ group :test, :development do
     gem 'debugger'
     # https://github.com/copiousfreetime/launchy
     gem 'launchy'
+    # https://github.com/deivid-rodriguez/byebug
+    gem 'byebug'
     # https://github.com/rweng/pry-rails
     gem 'pry-rails'
     # https://github.com/rspec/rspec-collection_matchers
