@@ -9,8 +9,10 @@
     </head>
     <body>
         <%= render 'layouts/header' %>
-        <br/><h1 class="app-title">GITHUB PROFILER</h1><br/>
-        <%= yield %>
+        <div class="main-frame">
+            <br/><h1 class="app-title">GITHUB PROFILER</h1><br/>
+            <%= yield %>
+        </div>
         <%= render 'layouts/footer' %>
         <script>              
             <% if current_user != nil %>
@@ -47,6 +49,7 @@
                 }]);
             <% else %>
                 var app = angular.module('WebTemplate', []);
+                <% flash[:notice] = " " %>
             <% end %> 
 
             app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
@@ -56,6 +59,7 @@
                         $http.get('https://api.github.com/users/' + $scope.username_input + auth_token).
                         success(function(userData) {
                             $("#save-profile").removeClass('disable_button');
+                            $("#save-profile").addClass('button_hover');
                             $("#save-profile").val("Save Profile");
                             <% if current_user != nil %>
                                 document.getElementById('save-profile').disabled = false;
@@ -73,12 +77,14 @@
                             $scope.publicRepos = userData.public_repos || "0";
                             $scope.following = userData.following || "0";
                             $scope.followers = userData.followers || "0";
-                            $('#result_message').text("");
+                            $('.error-message').text("");
+                            $('.notice-message').text("Github profile found!");
                         }).error(function(userData) {
                             $(".aaaa").addClass('hidden');
                             $(".aaaa").removeClass('show');
-                            $('#result_message').text("Sorry, there\'s no Github user " + $scope.username_input);
-                        }).finally(function() {
+                            $('.error-message').text("");
+                            $('.notice-message').text("Sorry, profile not found");
+                            }).finally(function() {
                             $scope.username_input = '';
                         });
                     };
@@ -90,13 +96,14 @@
                         $http.post(url).
                         success(function(saveResult) {
                             $("#save-profile").val("Profile saved");
+                            $("#save-profile").removeClass('button_hover');
                             $("#save-profile").addClass('disable_button');
                             document.getElementById('save-profile').disabled = 'disabled';
                             // $("#save-profile").addClass('hide')
                             console.log("Profile successfully saved!");
-                            $('#result_message').text("Profile successfully saved!");
+                            $('.notice-message').text("Profile successfully saved!");
                         }).error(function(saveResult) {
-                            $('#result_message').text("Profile could not be saved");
+                            $('.notice-message').text("Profile could not be saved");
                         });
                    <% end %> 
                 };

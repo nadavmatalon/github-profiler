@@ -30,7 +30,7 @@
             <!-- <li><%= f.label :current_password %><br/> -->
                 <!-- <i>(current password needed to confirm changes)</i></li> -->
             <!-- <li><%= f.password_field :current_password, autocomplete: "off" %></li> -->
-            <li><%= f.submit "Update" %></li><br/>
+            <li><%= f.submit "Update", class: 'button_hover' %></li><br/>
        </ul>
     <% end %>
 </div>
@@ -38,7 +38,7 @@
 <div>
     <ul class="edit-accout-form">
         <li><strong>Delete Accout</strong></li>
-        <li><%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></li>
+        <li><%= button_to "Delete my account", registration_path(resource_name), class: "button_hover", data: { confirm: "Are you sure?" }, method: :delete %></li>
     </ul>
 </div>
 
