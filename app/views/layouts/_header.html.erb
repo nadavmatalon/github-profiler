@@ -8,12 +8,14 @@
                     <% else %>
                         <li class="user-message"><%= "Welcome Guest" %></li>
                     <% end %>
+                    <li id="save-profile-message"></li>
                 </ul>
+
                 <ul class="nav navbar-nav">
                     <% if alert %>
                         <li class="alert alert-message"><%= alert %></li>
                     <% elsif notice %>
-                        <li class="notice notice-message"><%= notice %></li>
+                        <li class="notice notice-message" ><%= notice %></li>
                     <% else %>
                         <%= render 'layouts/error_messages', object: resource %>
                     <% end %>

@@ -4,10 +4,10 @@
 
 	<h2 class="page-title">Github Profile</h2>
 	
-	<div class="bbbb">
 		<% client = Octokit::Client.new(access_token: Rails.application.secrets.github_api_token) %>
 		<% begin @user = client.user current_user.username rescue @user = nil end %>
 
+	<div class="bbbb">
 	    <div class="git-profile-avatar">
 	    	<img ng-src="{{ user_avatar }}">
 	    </div>
@@ -15,15 +15,17 @@
 			<form id='save_profile-form'>
 			    <ul class="search-profile">
 			    	<% if @user != nil %>
-						<li class="search-profile-data-header" id="profile-username"> {{ username }} </li>
+						<li class="search-profile-data-header"> {{ username }} </li>
 					<% else %> 
-						<li class="search-profile-data-header" id="profile-username"> <%= current_user.username %> </li>
+						<li class="search-profile-data-header"> <%= current_user.username %> </li>
 					<% end %>
 					<li class="search-profile-data"> Name: {{ name }} </li>
 					<li class="search-profile-data"> Location: {{ location }} </li>
 					<li class="search-profile-data"> Email: {{ email }} </li>
 					<% if @user != nil %>
-						<li class="search-profile-data"> Github page: <a href=<%= "http://www.github.com/#{current_user.username.downcase}" %>> <%= "http://www.github.com/#{current_user.username.downcase}" %> </a></li>
+						<li class="search-profile-data"> Github page: 
+							<a href=<%="http://www.github.com/#{current_user.username.downcase}"%>> <%= "http://www.github.com/#{current_user.username.downcase}" %></a>
+						</li>
 					<% else %> 
 						<li class="search-profile-data"> Github page: n/a</li>
 					<% end %>
@@ -43,7 +45,7 @@
 			<% @public_repos = [] %>
 		<% end %>
 		<ul>
-			<li class="search-profile-data-header" id="profile-username">Public Repos</li>
+			<li class="search-profile-data-header">Public Repos</li>
 			<% if @public_repos != [] %>
 				<% @public_repos.each do |repo| %>
 					<li class="repo-profile-header"><a href=<%= "#{repo.html_url}" %>><%= repo.name %></a></li>
@@ -58,22 +60,24 @@
 	
 	<div class="dddd">
 		<% @saved_links = current_user.gitlinks %>
-			<ul>
-				<li class="search-profile-data-header" id="profile-username">Saved Profiles</li>
-				<% if @saved_links.any? %>
-					<div class="saved-profile-container">
-						<% @saved_links.each do |gitlink| %>
-							<% saved_profile = client.user gitlink.link %>
-							<div class="signle-saved-profile-container">
-		    					<div class="saved_profile_avatar"><img ng-src=<%= saved_profile.avatar_url %>></a><br/></div>
-								<div class="search-profile-data"><a href=<%= "http://www.github.com/#{gitlink.link}" %>><%= gitlink.link %></a></div>
-							</div>
-						<% end %>
-					</div>
-				<% else %>
-						<li class="search-profile-data"><%= "No saved profiles yet" %></li>
-        		<% end %>
- 			</ul>
+		<ul>
+			<li class="search-profile-data-header">Saved Profiles</li>
+			<% if @saved_links.any? %>
+				<div class="saved-profile-container">
+					<% @saved_links.each do |gitlink| %>
+						<% saved_profile = client.user gitlink.link %>
+						<div class="signle-saved-profile-container">
+							<a href=<%= "http://www.github.com/#{gitlink.link}" %>>
+	    						<div class="saved_profile_avatar"> <img ng-src=<%= saved_profile.avatar_url %> /><br/></div>
+								<div class="search-profile-data">  <p><%= gitlink.link %></p></div>
+							</a>
+						</div>
+					<% end %>
+				</div>
+			<% else %>
+					<li class="search-profile-data"><%= "No saved profiles yet" %></li>
+    		<% end %>
+		</ul>
 	</div>
 	<%= render "devise/shared/links" %>
 </div>

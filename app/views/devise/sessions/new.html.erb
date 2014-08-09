@@ -14,7 +14,7 @@
 	  		<% if devise_mapping.rememberable? -%>
 	    		<li id="form-header-remember_me"><%= f.check_box :remember_me %> <%= f.label :remember_me %></li>
 	  		<% end %>
-	  		<li><%= f.submit "Sign in" %></li>
+	  		<li><%= f.submit "Sign in", class: 'button_hover' %></li>
 	  	</ul>
   	<% end %>
 </div>
