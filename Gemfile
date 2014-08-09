@@ -74,7 +74,7 @@ end
 
 group :test do
     # https://github.com/vertis/selenium-webdriver
-    # gem 'selenium-webdriver'  # not installed for now
+    # gem 'selenium-webdriver'
 end
 
 group :test, :development do
