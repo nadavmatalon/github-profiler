@@ -19,6 +19,12 @@
 		<td>
 			<img src="app/assets/images/app_screenshot_2.png" width="160px" height="105px" />
 		</td>
+		<td>
+			<img src="app/assets/images/app_screenshot_3.png" width="160px" height="105px" />
+		</td>
+		<td>
+			<img src="app/assets/images/app_screenshot_4.png" width="160px" height="105px" />
+		</td>
 	</tr>
 </table>
 
