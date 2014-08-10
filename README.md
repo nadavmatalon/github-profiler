@@ -11,7 +11,7 @@
 
 ## App Screenshots
 
-![](assets/app_screenshot_1.png "app_screenshot_1")
+![](app/assets/images/app_screenshot_1.png "app_screenshot_1")
 
 
 ##  General Description
