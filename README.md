@@ -74,13 +74,13 @@ browsers as well.</p>
 
 ##  Testing
 
-<p>Tests were written with Rspec & Capybara.</p>
+Tests were written with Rspec (3.0.3) & Capybara (2.3.0)<br>
 
-<p>To run the tests in terminal: $ rspec</p>
+To run the tests in terminal: 
 
-<p>Rspec version: 3.0.3</p>
-
-<p>Capibara version: 2.3.0</p>
+~~~ sh
+$ rspec
+~~~
 
 
 ##  License
