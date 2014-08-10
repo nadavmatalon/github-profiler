@@ -67,9 +67,12 @@ http://github-profiler.herokuapp.com
 
 ##  Browser Caveate
 
-<p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
-and to a lesser extent <strong>Apple Safari</strong>. However. it should look decent on other
-browsers as well.</p>
+ This app has been tested with and supports the following browsers:
+
+* Google Chrome 36.0+
+* Apple Safari 7.0.5+
+
+Nevertheless, it should (hopefully) look decent in other browsers as well.</p>
 
 
 ##  Testing
