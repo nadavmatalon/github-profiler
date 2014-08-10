@@ -65,8 +65,8 @@
                                 document.getElementById('save-profile').disabled = false;
                             <% end %> 
                             // $("#save-profile").removeClass('hide');
-                            $(".aaaa").addClass('show');
-                            $(".aaaa").removeClass('hidden');
+                            $(".search-profile-results-container").addClass('show');
+                            $(".search-profile-results-container").removeClass('hidden');
                             $scope.username = userData.login;
                             $scope.name = userData.name || "n/a";
                             $scope.location = userData.location || "n/a";
@@ -80,8 +80,8 @@
                             $('.error-message').text("");
                             $('.notice-message').text("Github profile found!");
                         }).error(function(userData) {
-                            $(".aaaa").addClass('hidden');
-                            $(".aaaa").removeClass('show');
+                            $(".search-profile-results-container").addClass('hidden');
+                            $(".search-profile-results-container").removeClass('show');
                             $('.error-message').text("");
                             $('.notice-message').text("Sorry, profile not found");
                             }).finally(function() {

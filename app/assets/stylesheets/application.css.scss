@@ -1,15 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
  *= require reset
  *= require_tree .
  *= require_self
@@ -20,13 +9,26 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
+/* variables */
+
+$lightGray: #999;
+$grayMediumLight: #eaeaea;
+
+/* mixins */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* universal */
 
 html {
   	overflow-y: scroll;
   	height: 100%;
     position: static;
 }
-
 
 body {
   	min-height: 100%;
@@ -39,23 +41,6 @@ body {
     background-color: transparent;
 }
 
-.container {
-	border-bottom: 1px solid rgb(200, 200, 200);
-	border-top: 1px solid rgb(200, 200, 200);
-	background-color: rgb(250, 250, 250);
-	padding-left: 30px;
-	padding-right: 30px;
-	line-height: 1px;
-	width: 100%;
-  	padding-bottom: 1px;
-  	padding-top: 1px;
-}
-
-
-$lightGray: #999;
-
-/* universal */
-
 section {
     overflow: auto;
 }
@@ -63,16 +48,6 @@ section {
 textarea {
     resize: vertical;
 }
-
-.center {
-    text-align: center;
-  h1 {
-      margin-bottom: 10px;
-    }
-}
-
-
-/* typography */
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
@@ -99,6 +74,23 @@ p {
     text-align: center;
 }
 
+label {
+  line-height: 25px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+input[type=submit] {
+  margin-top: 31px;
+  padding: 7px 26px;
+  cursor: pointer;
+  border-radius: 5px;
+  line-height: 23px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 /* header */
 
 .header {
@@ -120,7 +112,6 @@ p {
     }
 }
 
-
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   border-radius: 4px;
   background-color: cadetblue;
@@ -134,40 +125,6 @@ p {
   }
 }
 
-
-/* footer */
-
-footer {
-    margin-top: 100px;
-    padding-top: 5px;
-    // border-top: 1px solid #eaeaea;
-    color: $lightGray;
-}
-
-
-/* mixins, variables, etc. */
-
-$grayMediumLight: #eaeaea;
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* miscellaneous */
-
-.debug_dump {
-  width: 85%;
-  margin-top: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  @include box_sizing;  
-  font-size:  1.1em;
-  letter-spacing: 0.02em;
-}
-
-
 .user-message {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -177,7 +134,6 @@ $grayMediumLight: #eaeaea;
   line-height: 20px;
 }
 
-
 .error-message {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -185,7 +141,6 @@ $grayMediumLight: #eaeaea;
   letter-spacing: 0.02em;
   font-weight: 500;
   line-height: 20px;
-  // margin-right: auto;
   color: red;
   margin-left: 80px;
   width: 270px;
@@ -198,7 +153,6 @@ $grayMediumLight: #eaeaea;
   letter-spacing: 0.02em;
   font-weight: 500;
   line-height: 20px;
-  // margin-right: auto;
   color: green;
   margin-left: 80px;
   width: 270px;
@@ -216,6 +170,60 @@ $grayMediumLight: #eaeaea;
   margin-left: 150px;
 }
 
+/* main body */
+
+.app-title {
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-family: Optima;
+  font-size: 4.5em;
+  margin-top: 78px;
+  margin-bottom: 12px;
+}
+
+.main-frame {
+    min-height: 710px;
+}
+
+.page-title {
+  letter-spacing: 0.02em;
+  color: rgb(40, 109, 40);
+  font-weight: 500;
+}
+
+.color_button {
+  color: black;
+}
+
+.about-text {
+  padding-top: 8px;
+}
+
+.about-text p {
+  font-size: 1.35em;
+  text-align: justify;
+  padding-left: 6px;
+  padding-right: 12px;
+}
+
+.container {
+  border-bottom: 1px solid rgb(200, 200, 200);
+  border-top: 1px solid rgb(200, 200, 200);
+  background-color: rgb(250, 250, 250);
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 1px;
+  width: 100%;
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+
+.center {
+    text-align: center;
+  h1 {
+      margin-bottom: 10px;
+    }
+}
 
 .sign-in-form, .sign-up-form, .edit-accout-form {
   width: 100%;
@@ -229,21 +237,6 @@ $grayMediumLight: #eaeaea;
     padding-top: 5px;
     padding-bottom: 5px;  
     }
-}
-
-.app-title {
-  letter-spacing: 0.02em;
-  font-weight: 600;
-  font-family: Optima;
-  font-size: 4.5em;
-  margin-top: 78px;
-  margin-bottom: 12px;
-}
-
-.page-title {
-  letter-spacing: 0.02em;
-  color: rgb(40, 109, 40);
-  font-weight: 500;
 }
 
 
@@ -261,23 +254,6 @@ $grayMediumLight: #eaeaea;
   }
 }
 
-label {
-  line-height: 25px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-}
-
-input[type=submit] {
-  margin-top: 31px;
-  padding: 7px 26px;
-  cursor: pointer;
-  border-radius: 5px;
-  line-height: 23px;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 .profile-header-form {
   font-size: 1.0em;
   margin-bottom: 13px;
@@ -291,7 +267,6 @@ input[type=submit] {
   margin-bottom: 34px;
   font-weight: 500;
 }
-
 
 .profile-avatar img {
   width: 100%;
@@ -310,7 +285,6 @@ input[type=submit] {
   float: left;
   margin-top: 6px;
 }
-
 
 .git-profile-info {
   margin-top: 0px;
@@ -350,7 +324,6 @@ input[type=submit] {
   }
 }
 
-
 .hidden {
   display: none;
 }
@@ -359,8 +332,7 @@ input[type=submit] {
  display: block;
 }
 
-
-.aaaa {
+.search-profile-results-container {
   display: none;
   background-color: #96aa96;
   border: 1px solid #829682;
@@ -377,7 +349,7 @@ input[type=submit] {
   padding-right: 20px;
 }
 
-.bbbb {
+.my-profile-main-container {
   background-color: #96aa96;
   border: 1px solid #829682;
   border-radius: 10px;
@@ -393,13 +365,13 @@ input[type=submit] {
   padding-right: 20px;
 }
 
-.bbbb li {
+.my-profile-main-container li {
   a:hover {
   color: blue;
   }
 }
 
-.cccc {
+.my-profile-repo-container {
   background-color: #D4B286;
   border: 1px solid #B49B8A;
   border-radius: 10px;
@@ -415,14 +387,13 @@ input[type=submit] {
   padding-right: 20px;
 }
 
-.cccc li {
+.my-profile-repo-container li {
   a:hover {
     color: blue;
   }
 }
 
-
-.dddd {
+.my-profile-saved-links-container {
   background-color: salmon;
   border: 1px solid #B49B8A;
   border-radius: 10px;
@@ -437,12 +408,20 @@ input[type=submit] {
   padding-left: 20px;
 }
 
-.dddd li {
+.my-profile-saved-links-container li {
   margin-left: 10px;
   padding-bottom: 8px;
   a:hover {
     color: blue;
   }
+}
+
+.my-profile-avatar-container {
+  width: 120px;
+  height: 120px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
 }
 
 .search-profile-data-header {
@@ -481,7 +460,6 @@ input[type=submit] {
    }
 }
 
-
 .repo-profile-header {
   text-decoration: none;
   font-size: 1.6em;
@@ -501,7 +479,6 @@ input[type=submit] {
      cursor:pointer;  
   }
 }
-
 
 .repo-profile-data {
   color: white;
@@ -523,7 +500,6 @@ input[type=submit] {
    }
 }
 
-
 #save-profile {
   margin-top: -48px;
   float: right;
@@ -540,7 +516,6 @@ input[type=submit] {
 .button_hover:hover {
   color: green;
 }
-
 
 .disable_button {
   margin-top: -48px;
@@ -630,7 +605,6 @@ a:hover {
   height: 18px;
 }
 
-
 #profile-avatar-image {
   img {
     width: 100%;
@@ -643,16 +617,22 @@ a:hover {
   }
 }
 
-.eeee {
-  width: 120px;
-  height: 120px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 30px;
+/* footer */
+
+footer {
+    margin-top: 100px;
+    padding-top: 5px;
+    color: $lightGray;
 }
 
-.main-frame {
-    min-height: 710px;
+.debug_dump {
+  width: 85%;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @include box_sizing;  
+  font-size:  1.1em;
+  letter-spacing: 0.02em;
 }
 
 .footer-container {
@@ -675,7 +655,6 @@ a:hover {
   vertical-align: bottom;
 }
 
-
 #powered-by > p {
   font-size: 1.2em;
   font-weight: 500;
@@ -696,7 +675,6 @@ a:hover {
   // margin-left: 4px;
 }
 
-
 .footer-image-tdd {
   margin-top: 4px;
   width: 44px;
@@ -704,7 +682,6 @@ a:hover {
   margin-left: 4px;
   margin-right: 4px;
 }
-
 
 .footer-image-rails {
   margin-top: 3px;
@@ -841,28 +818,3 @@ a:hover {
   margin-left: -25px;
   margin-right: 0px;
 }
-
-.color_button {
-  color: black;
-}
-
-.about-text {
-  padding-top: 8px;
-}
-
-.about-text p {
-  font-size: 1.35em;
-  text-align: justify;
-  padding-left: 6px;
-  padding-right: 12px;
-}
-
-
-
-
-
-
-
-
-
-
