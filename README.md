@@ -62,8 +62,8 @@ the registration process.</p>
 ##  See it Live on Heroku
 			
 <div>
-	<img src="app/assets/images/footer/heroku_small.png">
-	<span>A live version of the app can be found at: http://github-profiler.herokuapp.com</span>
+	<img src="app/assets/images/footer/heroku_small.png" style="float: left;">
+	<p>A live version of the app can be found at:<br/> http://github-profiler.herokuapp.com</p>
 </div>
 
 ##  Browser Caveate
