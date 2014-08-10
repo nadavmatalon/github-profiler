@@ -1,4 +1,4 @@
-##GITHUB PROFILER 
+#GITHUB PROFILER 
 
 * [Screenshots](#screenshot)
 * [General Description](#general-description)
