@@ -2,14 +2,14 @@
 
 ## Table of Contents
 
-* [App Screenshots](#app-screenshot)
+* [Screenshots](#screenshot)
 * [General Description](#general-description)
 * [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browser Caveate](#browser-caveate)
 * [Testing](#testing)
 
 
-## App Screenshots
+## Screenshots
 
 <table>
 	<tr>
