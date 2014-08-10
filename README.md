@@ -62,7 +62,7 @@ the registration process.</p>
 ##  See it Live on Heroku
 			
 <div>
-	<img src="app/assets/images/footer/heroku_small.png" style="max-width:100%;float: left;">
+	<img src="app/assets/images/footer/heroku_small.png" float="left">
 	<p>A live version of the app can be found at:<br/> http://github-profiler.herokuapp.com</p>
 </div>
 
