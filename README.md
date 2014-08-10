@@ -13,7 +13,7 @@
 
 <table>
 	<tr>
-		<td>
+		<td style="border-color: white;" >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_1.png">
 				<img src="app/assets/images/app_screenshot_1.png" width="160px" height="105px" />
 			</a>
