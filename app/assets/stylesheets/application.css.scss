@@ -562,8 +562,9 @@ input[type=submit] {
   color: darkgreen;
 }
 
-#contact-us {
+.contact-help {
   text-align: center;
+  width: 700px;
 }
 
 .saved_profile_avatar img {
@@ -659,12 +660,12 @@ a:hover {
   width: 100%;
   height: 72px;
   margin-top: 20px;
-  min-width: 75%;
+  min-width: 1400px;
+  padding-left: 1%;
   background-color: #fafafa;
   border-top: 1px solid #c8c8c8;
-  // border-bottom: 1px solid #c8c8c8;
+  border-bottom: 1px solid #c8c8c8;
 }
-
 
 .footer-container > div {
   display: inline-block;
@@ -672,8 +673,6 @@ a:hover {
   height: 60px;
   vertical-align: -webkit-baseline-middle;
   vertical-align: bottom;
-  margin-left: 8px;
-  margin-right: 8px;
 }
 
 
@@ -681,19 +680,20 @@ a:hover {
   font-size: 1.2em;
   font-weight: 500;
   padding-top: 12px;
+  margin-left: -12px;
 }
 
 #written-by > span {
   font-size: 1.2em;
   font-weight: 500;
-  padding-top: 13px;
+  padding-top: 15px;
   float: left;
-  margin-left: 7px;
-  margin-right: 0px;
+  margin-left: 14px;
+  margin-right: 10px;
 }
 
 #written-by > a > img {
-  margin-left: 4px;
+  // margin-left: 4px;
 }
 
 
@@ -701,105 +701,161 @@ a:hover {
   margin-top: 4px;
   width: 44px;
   height: 44px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 
-.footer-image-ruby {
-  margin-top: 2px;
+.footer-image-rails {
+  margin-top: 3px;
   width: 43px;
   height: 43px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-rspec {
   margin-top: 1px;
   width: 43px;
   height: 43px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-capybara {
   margin-top: 2px;
   width: 43px;
   height: 43px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-postgresql {
   margin-top: 2px;
   width: 43px;
   height: 44px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-jquery {
   margin-top: 2px;
   width: 43px;
   height: 43px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-ajax {
   margin-top: 2px;
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.footer-image-devise {
+  margin-top: 2px;
+  width: 76px;
+  height: 42px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.footer-image-omniauth {
+  margin-top: 3px;
+  width: 42px;
+  height: 42px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.footer-image-octokit {
+  margin-top: 3px;
+  width: 42px;
+  height: 42px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-html5 {
   margin-top: 2px;
   width: 47px;
   height: 45px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-css3 {
   margin-top: 2px;
   width: 47px;
   height: 45px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-bootstrap {
   margin-top: 5px;
   width: 41px;
   height: 41px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-angularjs {
-  margin-top: 2px;
-  width: 82px;
-  height: 47px;
+  margin-top: 1px;
+  width: 94px;
+  height: 54px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-mustache {
   margin-top: 4px;
   width: 48px;
   height: 46px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-heroku {
-  margin-top: 4px;
+  margin-top: 5px;
   width: 44px;
   height: 43px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-github {
   margin-top: 4px;
   width: 44px;
   height: 43px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-image-nmqr {
-  margin-top: 6px;
+  margin-top: 7px;
   width: 41px;
   height: 41px;
-  margin-left: 0px;
+  margin-left: -25px;
   margin-right: 0px;
 }
-
 
 .color_button {
   color: black;
 }
 
+.about-text {
+  padding-top: 8px;
+}
 
+.about-text p {
+  font-size: 1.35em;
+  text-align: justify;
+  padding-left: 6px;
+  padding-right: 12px;
+}
 
 
 
