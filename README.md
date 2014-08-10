@@ -14,27 +14,27 @@
 <table>
 	<tr>
 		<td align="center" width=25% >
-			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_1.png">
+			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_1.png" >
 				<img src="app/assets/images/app_screenshot_1.png" height="105px" />
-				<span font-size="10px">Sign up</span>
+				Sign up
 			</a>
 		</td>
 		<td align="center" width=25% >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_2.png">
 				<img src="app/assets/images/app_screenshot_2.png" height="105px" />
-				<span font-size="10px">Search Profiles</span>
+				Search Profiles
 			</a>
 		</td>
 		<td align="center" width=25% >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_3.png">
 				<img src="app/assets/images/app_screenshot_3.png" height="105px" />
-				<span style="font-size: 10px;">My Github Profile</span>
+				My Github Profile
 			</a>
 		</td>
 		<td align="center" width=25% >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_4.png">
 				<img src="app/assets/images/app_screenshot_4.png" height="105px" />
-				<span style="font-size: 10px;">Saved Profiles</span>
+				Saved Profiles
 			</a>
 		</td>
 	</tr>
