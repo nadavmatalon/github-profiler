@@ -11,8 +11,16 @@
 
 ## App Screenshots
 
-![](app/assets/images/app_screenshot_1.png "app_screenshot_1", width="250px" height="150px")
-
+<table>
+	<tr>
+		<td>
+			<img src="app/assets/images/app_screenshot_1.png" width="160px" height="105px" />
+		</td>
+		<td>
+			<img src="app/assets/images/app_screenshot_2.png" width="160px" height="105px" />
+		</td>
+	</tr>
+</table>
 
 ##  General Description
 
