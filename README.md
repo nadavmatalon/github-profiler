@@ -13,25 +13,28 @@
 
 <table>
 	<tr>
-		<td style="border-color: white;" >
+		<td align="center" width=25% >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_1.png">
-				<img src="app/assets/images/app_screenshot_1.png" width="160px" height="105px" />
+				<img src="app/assets/images/app_screenshot_1.png" height="105px" />
+				<span font-size="10px">Sign up</span>
 			</a>
-		
 		</td>
-		<td>
+		<td align="center" width=25% >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_2.png">
-				<img src="app/assets/images/app_screenshot_2.png" width="160px" height="105px" />
+				<img src="app/assets/images/app_screenshot_2.png" height="105px" />
+				<span font-size="10px">Search Profiles</span>
 			</a>
 		</td>
-		<td>
+		<td align="center" width=25% >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_3.png">
-				<img src="app/assets/images/app_screenshot_3.png" width="160px" height="105px" />
+				<img src="app/assets/images/app_screenshot_3.png" height="105px" />
+				<span style="font-size: 10px;">My Github Profile</span>
 			</a>
 		</td>
-		<td>
+		<td align="center" width=25% >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_4.png">
-				<img src="app/assets/images/app_screenshot_4.png" width="160px" height="105px" />
+				<img src="app/assets/images/app_screenshot_4.png" height="105px" />
+				<span style="font-size: 10px;">Saved Profiles</span>
 			</a>
 		</td>
 	</tr>
