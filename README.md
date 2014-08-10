@@ -11,18 +11,33 @@
 
 ## App Screenshots
 
-![](app/assets/images/app_screenshot_1.png "app_screenshot_1")
+![](app/assets/images/app_screenshot_1.png "app_screenshot_1", width="250px" height="150px")
 
 
 ##  General Description
 
-<p></p>
+<p><strong>Github Profiler</strong> is a web app for browsing and storing profiles of 
+<a href="http://www.github.com">Github</a> users.</p> 
+
+<p>The app's search engine on the homepage enables all users (registered or 
+unregistered) to find profiles of Github users by their username.</p>
+
+<p>Each profile can then be stored in the user's account for future reference (registered
+<strong>Github Profiler</strong> users only).</p> 
+
+<p>The app will automatically load the personal profiles of registered users,
+including extensive information about their repos, under their profile page
+(for this, users need to sign up with their Github user name).</p>
+
+<p>Moreover, users can use their Github username and password to directly sign in to
+<strong>Github Profiler</strong> thereby saving them the need to go through
+the registration process.</p>
 
 
 ##  See it Live on Heroku
 			
 <p>A live version of the app can be found at:</p> 
-<p></p>
+<p>http://github-profiler.herokuapp.com</p>
 
 
 ##  Browser Caveate
