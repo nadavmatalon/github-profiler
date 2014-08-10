@@ -60,11 +60,13 @@ the registration process.</p>
 
 
 ##  See it Live on Heroku
-			
+
+```html			
 <div style="display: -webkit-box; display: -webkit-inline-box;">
 	<img src="app/assets/images/footer/heroku_small.png" float="left">
 	<p>A live version of the app can be found at: http://github-profiler.herokuapp.com</p>
 </div>
+```
 
 ##  Browser Caveate
 
