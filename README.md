@@ -14,19 +14,25 @@
 <table>
 	<tr>
 		<td>
-			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_2.png">
-			<img src="app/assets/images/app_screenshot_1.png" width="160px" height="105px" />
-		</a>
+			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_1.png">
+				<img src="app/assets/images/app_screenshot_1.png" width="160px" height="105px" />
+			</a>
 		
 		</td>
 		<td>
-			<img src="app/assets/images/app_screenshot_2.png" width="160px" height="105px" />
+			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_2.png">
+				<img src="app/assets/images/app_screenshot_2.png" width="160px" height="105px" />
+			</a>
 		</td>
 		<td>
-			<img src="app/assets/images/app_screenshot_3.png" width="160px" height="105px" />
+			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_3.png">
+				<img src="app/assets/images/app_screenshot_3.png" width="160px" height="105px" />
+			</a>
 		</td>
 		<td>
-			<img src="app/assets/images/app_screenshot_4.png" width="160px" height="105px" />
+			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_4.png">
+				<img src="app/assets/images/app_screenshot_4.png" width="160px" height="105px" />
+			</a>
 		</td>
 	</tr>
 </table>
