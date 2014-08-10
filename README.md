@@ -5,6 +5,7 @@
 * [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browser Caveate](#browser-caveate)
 * [Testing](#testing)
+* [License](#license)
 
 
 ## Screenshots
@@ -81,5 +82,9 @@ browsers as well.</p>
 
 <p>Capibara version: 2.3.0</p>
 
+
+##  License
+
+<p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license.</a></p>
 
 
