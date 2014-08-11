@@ -27,9 +27,13 @@
 
             <li id="form-header-label"><%= f.label :password_confirmation %></li>
             <li id="form-text-field"><%= f.password_field :password_confirmation, autocomplete: "off" %></li>
-            <!-- <li><%= f.label :current_password %><br/> -->
-                <!-- <i>(current password needed to confirm changes)</i></li> -->
-            <!-- <li><%= f.password_field :current_password, autocomplete: "off" %></li> -->
+ 
+            <% if false %>
+             <li><%= f.label :current_password %><br/>
+                <i>(current password needed to confirm changes)</i></li>
+             <li><%= f.password_field :current_password, autocomplete: "off" %></li>
+            <% end %>
+
             <li><%= f.submit "Update", class: 'button_hover' %></li><br/>
        </ul>
     <% end %>
@@ -43,3 +47,5 @@
 </div>
 
 <%= render "devise/shared/links" %>
+
+

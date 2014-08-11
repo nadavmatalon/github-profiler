@@ -22,7 +22,7 @@ class GitlinksController < ApplicationController
 			@gitlink = current_user.gitlinks.create(link: params[:content])
 			session[:database_result] = "gitlink saved"
 		end
-		redirect_to '/home' unless request.xhr?
+		redirect_to root_path unless request.xhr?
 	end
 
 	private
