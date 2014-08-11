@@ -5,7 +5,7 @@ describe "Sign in page" do
     before (:each) { visit new_user_session_path }
 
    it "should have page title \'Github Profiler | Sign In\'" do
-        should have_title("Github Profiler | Sign In")
+        should have_title "Github Profiler | Sign In"
     end
 
 	it "should have the content \'GITHUB PROFILER\'" do
@@ -29,7 +29,7 @@ describe "Sign in page" do
 	end
 
 	it "should have the content \'Remember me\'" do
-		should have_content ("Remember me")
+		should have_content "Remember me"
 	end
 
 	it "should have button \'Sign in\'" do

@@ -8,7 +8,7 @@ describe "Github Profile page" do
 	end
 
    it "should have page title \'Github Profiler | Github Profile\'" do
-        should have_title("Github Profiler | Github Profile")
+        should have_title "Github Profiler | Github Profile"
     end
 
 	it "should have the content \'GITHUB PROFILER\'" do

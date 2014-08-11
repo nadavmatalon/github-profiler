@@ -67,7 +67,7 @@ describe "Github Profiles", js: :true do
         fill_in "user_name", with: "nadavmatalon"
         click_button "Search"
         click_button "Save Profile"
-        expect(page).to have_button('Profile saved', disabled: true)
+        expect(page).to have_button 'Profile saved', disabled: true
     end
 
     it "are shown in user\'s Github Profile page after being saved" do

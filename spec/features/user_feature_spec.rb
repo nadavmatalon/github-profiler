@@ -5,25 +5,25 @@ feature "Users" do
 
 		scenario "users can sign up with just username and password" do
 			minimal_user_sign_up
-			expect(page).to have_content ("Welcome test_user")
+			expect(page).to have_content "Welcome test_user"
 		end
 
 		scenario "users can provide their location on sign up" do
 			full_user_sign_up
 			click_link "Profile"
-			expect(page).to have_content ("test_location")
+			expect(page).to have_content "test_location"
 		end
 
 		scenario "users can provide their email on sign up" do
 			full_user_sign_up
 			click_link "Profile"
-			expect(page).to have_content ("user@email.com")
+			expect(page).to have_content "user@email.com"
 		end
 
 		scenario "users can provide their Github homepage on sign up" do
 			full_user_sign_up
 			click_link "Profile"
-			expect(page).to have_content ("http://user_domain.com")
+			expect(page).to have_content "http://user_domain.com"
 		end
 
 		scenario "users are re-directed to the homepage after signing up" do
@@ -144,7 +144,7 @@ feature "Users" do
 		scenario "users are shown the correct message after signing in" do
 			register_user
 			sign_in
-			expect(page).to have_content("Welcome test_user")
+			expect(page).to have_content "Welcome test_user"
 			expect(page).to have_content "Signed in successfully"
 		end
 
@@ -164,27 +164,27 @@ feature "Users" do
 		scenario "users cannot sign in with incorrect username" do
 			register_user
 			sign_in("wrong_username", "password")
-			expect(page).to have_content("Welcome Guest")
+			expect(page).to have_content "Welcome Guest"
 			expect(page).not_to have_link "Sign out"
 		end
 
 		scenario "users are shown correct error message if username is wrong on sign in" do
 			register_user
 			sign_in("wrong_username", "password")
-			expect(page).to have_content("Invalid email or password")
+			expect(page).to have_content "Invalid email or password"
 		end
 
 		scenario "users cannot sign in with incorrect password" do
 			register_user
 			sign_in("test_user", "wrong")
-			expect(page).to have_content("Welcome Guest")
+			expect(page).to have_content "Welcome Guest"
 			expect(page).not_to have_link "Sign out"
 		end
 
 		scenario "users are shown correct error message if password is wrong on sign in" do
 			register_user
 			sign_in("test_user", "wrong")
-			expect(page).to have_content("Invalid email or password")
+			expect(page).to have_content "Invalid email or password"
 		end
 	end
 
@@ -195,14 +195,14 @@ feature "Users" do
 			register_user
 			sign_in
 			click_link "Sign out"
-			expect(page).not_to have_content("Welcome test_user")
+			expect(page).not_to have_content "Welcome test_user"
 		end
 
 		scenario "users are shown the correct message when signing out" do
 			register_user
 			sign_in
 			sign_out
-			expect(page).to have_content("Signed out successfully")
+			expect(page).to have_content "Signed out successfully"
 		end
 
 		scenario "users cannot sign out if already signed out" do
@@ -210,7 +210,7 @@ feature "Users" do
 			sign_in
 			sign_out
 			expect(page).not_to have_button "Sign out"
-			expect(page).to have_content("Welcome Guest")
+			expect(page).to have_content "Welcome Guest"
 		end
 
 	end
