@@ -17,6 +17,7 @@
                     <% elsif (notice  && notice != " ") %>
                         <li class="notice notice-message" ><%= notice %></li>
                     <% else %>
+                        <li class="result-message"></li>
                         <li><%= render 'layouts/error_messages', object: resource %></li>
                     <% end %>
 

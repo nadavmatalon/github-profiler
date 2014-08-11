@@ -184,7 +184,7 @@ input[type=submit] {
 }
 
 .main-frame {
-    min-height: 710px;
+    min-height: 717px;
 }
 
 .page-title {
@@ -343,7 +343,7 @@ input[type=submit] {
   width: 800px;
   padding-top: 20px;
   margin-top: 29px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 1px;
@@ -532,8 +532,9 @@ input[type=submit] {
   }
 }
 
-#result_message {
-  margin-top: 30px;
+.result-message {
+  margin-top: 26px;
+  margin-left: 65px;
   font-size: 1.25em;
   font-weight: 500;
   color: darkgreen;
