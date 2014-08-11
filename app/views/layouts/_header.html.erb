@@ -4,9 +4,9 @@
             <nav>
                 <ul class="nav navbar-nav pull-left">
                     <% if user_signed_in? %>
-                        <li class="user-message"><%= "Welcome #{current_user.username}" %></li>
+                        <li class="user-message"><%= "Welcome #{current_user.username} " %></li>
                     <% else %>
-                        <li class="user-message"><%= "Welcome Guest" %></li>
+                        <li class="user-message"><%= "Welcome Guest " %></li>
                     <% end %>
                     <li id="save-profile-message"></li>
                 </ul>

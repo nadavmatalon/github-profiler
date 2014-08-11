@@ -8,6 +8,10 @@ require 'aws'
 
 Capybara.javascript_driver = :poltergeist
 
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, debug: false)
+end
+
 Capybara.server do |app, port|
   require 'rack/handler/thin'
   Rack::Handler::Thin.run(app, Port: port)

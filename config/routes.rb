@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     match '/profile', to: 'static_pages#profile', via: 'get'
     match '/github_profile', to: 'static_pages#github_profile', via: 'get'
 
+    match "{{ avatar }}", to: 'static_pages#home', via: 'get'
+
     devise_scope :user do
         get "/sign_up" => "devise/registrations#new"
         get "/sign_in" => "devise/sessions#create"

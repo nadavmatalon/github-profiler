@@ -67,7 +67,7 @@
 					<% @saved_links.each do |gitlink| %>
 						<% saved_profile = client.user gitlink.link %>
 						<div class="signle-saved-profile-container">
-							<a href=<%= "http://www.github.com/#{gitlink.link}" %>>
+							<a id="profile-link" href=<%= "http://www.github.com/#{gitlink.link}" %>>
 	    						<div class="saved_profile_avatar"> <img ng-src=<%= saved_profile.avatar_url %> /><br/></div>
 								<div class="search-profile-data">  <p><%= gitlink.link %></p></div>
 							</a>
