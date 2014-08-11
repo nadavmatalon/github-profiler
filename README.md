@@ -15,7 +15,7 @@
 <table>
 	<tr>
 		<td align="center" width=25% >
-			<a href="https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screenshot_1.png" >
+			<a href=https://raw.githubusercontent.com/nadavmatalon/github-profiler/master/app/assets/images/app_screnshot_1.png" >
 				<img src="app/assets/images/app_screenshot_1.png" height="105px" />
 				Sign up
 			</a>
