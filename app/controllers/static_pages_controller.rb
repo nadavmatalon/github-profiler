@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
   
   def profile
     if current_user.nil?
-      redirect_to '/home'
+      redirect_to root_path
     end
   end
 end

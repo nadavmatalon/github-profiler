@@ -14,11 +14,12 @@
                 <ul class="nav navbar-nav">
                     <% if alert %>
                         <li class="alert alert-message"><%= alert %></li>
-                    <% elsif notice %>
+                    <% elsif (notice  && notice != " ") %>
                         <li class="notice notice-message" ><%= notice %></li>
                     <% else %>
-                        <%= render 'layouts/error_messages', object: resource %>
+                        <li><%= render 'layouts/error_messages', object: resource %></li>
                     <% end %>
+
                 </ul>
                 <ul class="nav navbar-nav nav nav-pills pull-right">
                     <li class="home"><%= link_to "Home", home_path, id: "nav-button" %></li>

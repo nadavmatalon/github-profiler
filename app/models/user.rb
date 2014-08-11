@@ -12,10 +12,12 @@ class User < ActiveRecord::Base
 
 	has_many :gitlinks
 
-  	validates :name, length: { maximum: 50 }
-  	validates :username, :presence => true, uniqueness: { case_sensitive: false }
-  	# validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, uniqueness: { case_sensitive: false }
-
+    validates_confirmation_of :password, on: :create
+    validates :name, length: { maximum: 50 }
+    validates :username, presence: true, uniqueness: { case_sensitive: false }
+    validates :password, length: { minimum: 6 }, on: :create
+    validates_format_of :email, with: Devise.email_regexp, allow_blank: true
+    validates_format_of :url, with: URI.regexp(['http']), allow_blank: true
 
     def self.from_omniauth(auth)
         where(auth.slice(:provider, :uid)).first_or_create do |user|
