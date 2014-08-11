@@ -77,13 +77,15 @@
                             $scope.publicRepos = userData.public_repos || "0";
                             $scope.following = userData.following || "0";
                             $scope.followers = userData.followers || "0";
-                            $('.error-message').text("");
+                            $('.alert-message').text("");
                             $('.notice-message').text("Github profile found!");
+                            $('.result-message').text("Github profile found!");
                         }).error(function(userData) {
                             $(".search-profile-results-container").addClass('hidden');
                             $(".search-profile-results-container").removeClass('show');
-                            $('.error-message').text("");
+                            $('.alert-message').text("");
                             $('.notice-message').text("Sorry, profile not found");
+                            $('.result-message').text("Sorry, profile not found");
                             }).finally(function() {
                             $scope.username_input = '';
                         });

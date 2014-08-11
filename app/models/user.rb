@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
     validates_format_of :email, with: Devise.email_regexp, allow_blank: true
     validates_format_of :url, with: URI.regexp(['http']), allow_blank: true
 
+
     def self.from_omniauth(auth)
         where(auth.slice(:provider, :uid)).first_or_create do |user|
             user.username = auth.extra.raw_info.login
