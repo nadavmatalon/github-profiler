@@ -223,9 +223,9 @@ feature "Users" do
 			click_link "Account"
 			click_button "Delete my account"		
 			expect(page).not_to have_button "Sign out"
-			expect(page).to have_content("Welcome Guest")
+			expect(page).to have_content "Welcome Guest"
 			sign_in
-			expect(page).to have_content("Invalid email or password")
+			expect(page).to have_content "Invalid email or password"
 		end
 
 		scenario "users are shown the correct message after deleting their account" do
@@ -233,7 +233,19 @@ feature "Users" do
 			sign_in
 			click_link "Account"
 			click_button "Delete my account"		
-			expect(page).to have_content("Account successfully deleted")
+			expect(page).to have_content "Account successfully deleted"
+		end
+
+		scenario "users are signed out after deleting their account" do
+			register_user
+			sign_in
+			click_link "Account"
+			click_button "Delete my account"		
+			expect(page).to have_content "Welcome Guest"
+			expect(page).to have_link "Sign in"
+			expect(page).to have_link "Sign in"
+			expect(page).to have_link "Sign up"
+			expect(page).not_to have_link "Sign out"
 		end
 	end
 

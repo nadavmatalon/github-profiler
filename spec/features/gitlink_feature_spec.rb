@@ -46,12 +46,28 @@ describe "Github Profiles", js: :true do
         expect(User.first.gitlinks.count).to eq 1
     end
 
-   it "are stored in db after being saved by user" do
+   it "give correct message when saved" do
         user_gitlink_sign_up
         fill_in "user_name", with: "nadavmatalon"
         click_button "Search"
         click_button "Save Profile"
         expect(page).to have_content "Profile successfully saved!"
+    end
+
+   it "\'Save Profile\' button becomes disabled after being clicked" do
+        user_gitlink_sign_up
+        fill_in "user_name", with: "nadavmatalon"
+        click_button "Search"
+        click_button "Save Profile"
+        expect(page).not_to have_button "Save Profile"
+    end
+
+   it "\'Save Profile\' button changes to \'Profile Saved\' after being clicked" do
+        user_gitlink_sign_up
+        fill_in "user_name", with: "nadavmatalon"
+        click_button "Search"
+        click_button "Save Profile"
+        expect(page).to have_button('Profile saved', disabled: true)
     end
 
     it "are shown in user\'s Github Profile page after being saved" do
