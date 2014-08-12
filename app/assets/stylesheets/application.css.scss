@@ -352,17 +352,16 @@ input[type=submit] {
 }
 
 .my-profile-main-container {
+  width: 800px;
+  height: 365px;
   background-color: #96aa96;
   border: 1px solid #829682;
   border-radius: 10px;
   font-family: Helvetica Neue;
-  width: 800px;
   padding-top: 20px;
   margin-top: 50px;
-  // margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  // padding-bottom: 1px;
   padding-left: 20px;
   padding-right: 20px;
 }

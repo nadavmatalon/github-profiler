@@ -9,7 +9,8 @@ require 'aws'
 Capybara.javascript_driver = :poltergeist
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, debug: false)
+  # Capybara::Poltergeist::Driver.new(app, debug: false)
+  Capybara::Poltergeist::Driver.new(app, {debug: false, js_errors: false, phantomjs_options: ['--load-images=no']})
 end
 
 Capybara.server do |app, port|
@@ -24,11 +25,6 @@ ActiveRecord::Migration.maintain_test_schema!
 AWS.stub!
 AWS.config(access_key_id: Rails.application.secrets.AWS_access_key, secret_access_key: Rails.application.secrets.AWS_secret_key)
 
-
-Capybara.server do |app, port|
-  require 'rack/handler/thin'
-  Rack::Handler::Thin.run(app, Port: port)
-end
 
 RSpec.configure do |config|
 
@@ -51,7 +47,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.before(:each, :js => true) do
+  config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
 
