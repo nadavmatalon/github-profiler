@@ -103,9 +103,11 @@
                             document.getElementById('save-profile').disabled = 'disabled';
                             // $("#save-profile").addClass('hide')
                             console.log("Profile successfully saved!");
+                            $('.result-message').text("Profile successfully saved!");
                             $('.notice-message').text("Profile successfully saved!");
                         }).error(function(saveResult) {
                             $('.notice-message').text("Profile could not be saved");
+                            $('.result-message').text("Profile could not be saved");
                         });
                    <% end %> 
                 };
