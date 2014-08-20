@@ -84,16 +84,15 @@ However, it should (hopefully) look decent in other browsers as well.
 
 ##  Testing
 
-Tests were written with Rspec (3.0.3) & Capybara (2.3.0)<br>
+Tests were written with Rspec (3.0.2) & Capybara (2.4.1)
 
 The tests cover both back-end logic and front-end functionality.
 
 To run the tests in terminal: 
 
-~~~bash
+```bash
 $ rspec
-~~~
-
+```
 
 ##  License
 
