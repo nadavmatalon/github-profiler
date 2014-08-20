@@ -64,9 +64,12 @@ the registration process.</p>
 
 ##See it Live on Heroku
 
-A live version of the app can be found at:<br>
+A live version of the app can be found at:
+
 http://github-profiler.herokuapp.com
 
+As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
+(Heroku's giros take time to wake up...), so please be patient.
 
 ##Browsers
 
@@ -77,9 +80,6 @@ http://github-profiler.herokuapp.com
 * __Mozilla Firefox__ (31.0)
 
 However, it should (hopefully) look decent in other browsers as well.
-
-Also, as I'm using Heroku's free hosting service, the app may take a bit of time to upload 
-(Heroku's giros take time to wake up...), so please be patient.
 
 
 ##  Testing
