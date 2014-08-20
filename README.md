@@ -1,8 +1,8 @@
 #GITHUB PROFILER 
 
-## Table of Contents
+##Table of Contents
 
-* [Screenshots](#screenshot)
+* [Screenshots](#screenshots)
 * [General Description](#general-description)
 * [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browser Caveate](#browser-caveate)
@@ -10,7 +10,7 @@
 * [License](#license)
 
 
-## Screenshots
+##Screenshots
 
 <table>
 	<tr>
@@ -41,7 +41,8 @@
 	</tr>
 </table>
 
-##  General Description
+
+##General Description
 
 <p><strong>Github Profiler</strong> is a web app for browsing and storing profiles of 
 <a href="http://www.github.com">Github</a> users.</p> 
@@ -61,29 +62,31 @@ including extensive information about their repos, under their profile page
 the registration process.</p>
 
 
-##  See it Live on Heroku
+##See it Live on Heroku
 
 A live version of the app can be found at:<br>
 http://github-profiler.herokuapp.com
 
 
-##  Browser Caveate
+##Browser Caveate
 
  This app has been tested with and supports the following browsers:
 
 * Google Chrome (36.0)
 * Apple Safari (7.0.5)
 
-Nevertheless, it should (hopefully) look decent in other browsers as well.</p>
+However, it should (hopefully) look decent in other browsers as well.
 
 
 ##  Testing
 
 Tests were written with Rspec (3.0.3) & Capybara (2.3.0)<br>
 
+The tests cover both back-end logic and front-end functionality.
+
 To run the tests in terminal: 
 
-~~~ sh
+~~~bash
 $ rspec
 ~~~
 
@@ -91,6 +94,4 @@ $ rspec
 ##  License
 
 <p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
-
-
 
