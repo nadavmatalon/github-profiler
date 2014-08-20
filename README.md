@@ -5,7 +5,7 @@
 * [Screenshots](#screenshots)
 * [General Description](#general-description)
 * [See it Live on Heroku](#see-it-live-on-heroku)
-* [Browser Caveate](#browser-caveate)
+* [Browsers](#browsers)
 * [Testing](#testing)
 * [License](#license)
 
@@ -68,7 +68,7 @@ A live version of the app can be found at:<br>
 http://github-profiler.herokuapp.com
 
 
-##Browser Caveate
+##Browsers
 
  This app has been tested with and supports the following browsers:
 
