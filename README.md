@@ -72,10 +72,14 @@ http://github-profiler.herokuapp.com
 
  This app has been tested with and supports the following browsers:
 
-* Google Chrome (36.0)
-* Apple Safari (7.0.5)
+* __Google Chrome__ (36.0)
+* __Apple Safari__ (7.0.5)
+* __Mozilla Firefox__ (31.0)
 
 However, it should (hopefully) look decent in other browsers as well.
+
+Also, as I'm using Heroku's free hosting service, the app may take a bit of time to upload 
+(Heroku's giros take time to wake up...), so please be patient.
 
 
 ##  Testing
