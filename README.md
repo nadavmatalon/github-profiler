@@ -45,7 +45,11 @@
 ##General Description
 
 <p><strong>Github Profiler</strong> is a web app for browsing and storing profiles of 
-<a href="http://www.github.com">Github</a> users.</p> 
+<a href="http://www.github.com">Github</a> users.</p>
+
+<p>The app was built with Rails 4 and implements jQuery, Angular, Omniauth, Devise,
+Bootstrap. It uses a PostgreSQL database to store user data and was created 
+according to TDD (testing was done with Rspec & Capibara).
 
 <p>The app's search engine on the homepage enables all users (registered or 
 unregistered) to find profiles of Github users by their username.</p>
@@ -60,6 +64,9 @@ including extensive information about their repos, under their profile page
 <p>Moreover, users can use their Github username and password to directly sign in to
 <strong>Github Profiler</strong> thereby saving them the need to go through
 the registration process.</p>
+
+__Update 4.9.14:__ Added an Ajax-based popup window to display 'Connecting to Github' 
+message + spinner while Github Profiles are being loaded.
 
 
 ##See it Live on Heroku
@@ -76,10 +83,12 @@ As I'm using Heroku's free hosting service, the app may take a bit of time to up
  This app has been tested with and supports the following browsers:
 
 * __Google Chrome__ (36.0)
-* __Apple Safari__ (7.0.5)
 * __Mozilla Firefox__ (31.0)
+* __Apple Safari__ (7.0.5) (see note below)
 
-However, it should (hopefully) look decent in other browsers as well.
+Note: For some obscure reason I have not yet managed to figure out, __Safari__ refuses to 
+show the 'connecting to github' window which pops up while the data is loaded from Github 
+when clicking on the 'Github Profile' button in the navigation bar.
 
 
 ##  Testing
