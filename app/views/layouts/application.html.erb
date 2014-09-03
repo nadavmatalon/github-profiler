@@ -11,107 +11,117 @@
         <%= render 'layouts/header' %>
         <div class="main-frame">
             <br/><h1 class="app-title">GITHUB PROFILER</h1><br/>
+
+            <div class="spinner-container" style='display: none;'>
+                <p>Connecting to Github</p>
+                <img id='spinner' src='/assets/spinner.gif' alt='Loading' />
+            </div>
             <%= yield %>
         </div>
         <%= render 'layouts/footer' %>
-        <script>
-            <% if current_user != nil %>
-                var current_user_email = "<%= current_user.email %>";
-                var current_user_username = "<%= current_user.username %>";
-                var auth_token = "?access_token=<%= Rails.application.secrets.github_api_token %>"
-                var app = angular.module('WebTemplate', []);
-                app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
-                    $http.get('https://api.github.com/users/' + current_user_username + auth_token).
-                    success(function(profileData) {
-                        $(".github-profile").removeClass('hidden')
-                        $scope.username = profileData.login;
-                        $scope.name = profileData.name || "n/a";
-                        $scope.location = profileData.location || "n/a";
-                        $scope.email = profileData.email || current_user_email || "n/a";
-                        $scope.html_url = profileData.html_url;
-                        $scope.user_avatar = profileData.avatar_url || "github_avatar.png";
-                        $scope.date = profileData.created_at;
-                        $scope.publicRepos = profileData.public_repos || "0";
-                        $scope.following = profileData.following || "0";
-                        $scope.followers = profileData.followers || "0";
-                    }).error(function(profileData) {
-                        $scope.name = "n/a";
-                        $scope.location = "n/a";
-                        $scope.user_avatar = "github_avatar.png";
-                        $scope.username = "n/a";
-                        $scope.email = "n/a";
-                        $scope.html_url = "n/a";
-                        $scope.date = "n/a";
-                        $scope.publicRepos = "n/a";
-                        $scope.following = "n/a";
-                        $scope.followers = "n/a";
-                    });
-                }]);
-            <% else %>
-                var app = angular.module('WebTemplate', []);
-                <% flash[:notice] = " " %>
-            <% end %> 
-
-            app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
-                $scope.loadUser = function() {
-                    var auth_token = "?access_token=<%= Rails.application.secrets.github_api_token %>"
-                    if ($scope.username_input) {
-                        $http.get('https://api.github.com/users/' + $scope.username_input + auth_token).
-                        success(function(userData) {
-                            $("#save-profile").removeClass('disable_button');
-                            $("#save-profile").addClass('button_hover');
-                            $("#save-profile").val("Save Profile");
-                            <% if current_user != nil %>
-                                document.getElementById('save-profile').disabled = false;
-                            <% end %> 
-                            // $("#save-profile").removeClass('hide');
-                            $(".search-profile-results-container").addClass('show');
-                            $(".search-profile-results-container").removeClass('hidden');
-                            $scope.username = userData.login;
-                            $scope.name = userData.name || "n/a";
-                            $scope.location = userData.location || "n/a";
-                            $scope.email = userData.email || "n/a";
-                            $scope.html_url = userData.html_url;
-                            $scope.avatar = userData.avatar_url;
-                            $scope.date = userData.created_at;
-                            $scope.publicRepos = userData.public_repos || "0";
-                            $scope.following = userData.following || "0";
-                            $scope.followers = userData.followers || "0";
-                            $('.alert-message').text("");
-                            $('.notice-message').text("Github profile found!");
-                            $('.result-message').text("Github profile found!");
-                        }).error(function(userData) {
-                            $(".search-profile-results-container").addClass('hidden');
-                            $(".search-profile-results-container").removeClass('show');
-                            $('.alert-message').text("");
-                            $('.notice-message').text("Sorry, profile not found");
-                            $('.result-message').text("Sorry, profile not found");
-                            }).finally(function() {
-                            $scope.username_input = '';
-                        });
-                    };
-                };
-
-                $scope.saveProfile = function() {
-                    <% if current_user != nil %>
-                        url = ("/create_gitlink" + "/<%= current_user.id %>/" + $scope.username);
-                        $http.post(url).
-                        success(function(saveResult) {
-                            $("#save-profile").val("Profile saved");
-                            $("#save-profile").removeClass('button_hover');
-                            $("#save-profile").addClass('disable_button');
-                            document.getElementById('save-profile').disabled = 'disabled';
-                            $('.result-message').text("Profile successfully saved!");
-                            $('.notice-message').text("Profile successfully saved!");
-                        }).error(function(saveResult) {
-                            $('.notice-message').text("Profile could not be saved");
-                            $('.result-message').text("Profile could not be saved");
-                        });
-                   <% end %> 
-                };
-            }]);
-        </script>
     </body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+                $('.submit-spinner').click(function() {
+                    $('.spinner-container').fadeIn(200);
+                });
+        });
+        <% if current_user != nil %>
+            var current_user_email = "<%= current_user.email %>";
+            var current_user_username = "<%= current_user.username %>";
+            var auth_token = "?access_token=<%= Rails.application.secrets.github_api_token %>"
+            var app = angular.module('WebTemplate', []);
+            app.controller('GitProfileController', ['$scope', '$http', function($scope, $http) {
+                $http.get('https://api.github.com/users/' + current_user_username + auth_token).
+                success(function(profileData) {
+                    $(".github-profile").removeClass('hidden')
+                    $scope.username = profileData.login;
+                    $scope.name = profileData.name || "n/a";
+                    $scope.location = profileData.location || "n/a";
+                    $scope.email = profileData.email || current_user_email || "n/a";
+                    $scope.html_url = profileData.html_url;
+                    $scope.user_avatar = profileData.avatar_url || "github_avatar.png";
+                    $scope.date = profileData.created_at;
+                    $scope.publicRepos = profileData.public_repos || "0";
+                    $scope.following = profileData.following || "0";
+                    $scope.followers = profileData.followers || "0";
+                }).error(function(profileData) {
+                    $scope.name = "n/a";
+                    $scope.location = "n/a";
+                    $scope.user_avatar = "github_avatar.png";
+                    $scope.username = "n/a";
+                    $scope.email = "n/a";
+                    $scope.html_url = "n/a";
+                    $scope.date = "n/a";
+                    $scope.publicRepos = "n/a";
+                    $scope.following = "n/a";
+                    $scope.followers = "n/a";
+                });
+            }]);
+        <% else %>
+            var app = angular.module('WebTemplate', []);
+            <% flash[:notice] = " " %>
+        <% end %> 
+
+        app.controller('GitSearchController', ['$scope', '$http', function($scope, $http) {
+            $scope.loadUser = function() {
+                var auth_token = "?access_token=<%= Rails.application.secrets.github_api_token %>"
+                if ($scope.username_input) {
+                    $http.get('https://api.github.com/users/' + $scope.username_input + auth_token).
+                    success(function(userData) {
+                        $("#save-profile").removeClass('disable_button');
+                        $("#save-profile").addClass('button_hover');
+                        $("#save-profile").val("Save Profile");
+                        <% if current_user != nil %>
+                            document.getElementById('save-profile').disabled = false;
+                        <% end %> 
+                        // $("#save-profile").removeClass('hide');
+                        $(".search-profile-results-container").addClass('show');
+                        $(".search-profile-results-container").removeClass('hidden');
+                        $scope.username = userData.login;
+                        $scope.name = userData.name || "n/a";
+                        $scope.location = userData.location || "n/a";
+                        $scope.email = userData.email || "n/a";
+                        $scope.html_url = userData.html_url;
+                        $scope.avatar = userData.avatar_url;
+                        $scope.date = userData.created_at;
+                        $scope.publicRepos = userData.public_repos || "0";
+                        $scope.following = userData.following || "0";
+                        $scope.followers = userData.followers || "0";
+                        $('.alert-message').text("");
+                        $('.notice-message').text("Github profile found!");
+                        $('.result-message').text("Github profile found!");
+                    }).error(function(userData) {
+                        $(".search-profile-results-container").addClass('hidden');
+                        $(".search-profile-results-container").removeClass('show');
+                        $('.alert-message').text("");
+                        $('.notice-message').text("Sorry, profile not found");
+                        $('.result-message').text("Sorry, profile not found");
+                        }).finally(function() {
+                        $scope.username_input = '';
+                    });
+                };
+            };
+
+            $scope.saveProfile = function() {
+                <% if current_user != nil %>
+                    url = ("/create_gitlink" + "/<%= current_user.id %>/" + $scope.username);
+                    $http.post(url).
+                    success(function(saveResult) {
+                        $("#save-profile").val("Profile saved");
+                        $("#save-profile").removeClass('button_hover');
+                        $("#save-profile").addClass('disable_button');
+                        document.getElementById('save-profile').disabled = 'disabled';
+                        $('.result-message').text("Profile successfully saved!");
+                        $('.notice-message').text("Profile successfully saved!");
+                    }).error(function(saveResult) {
+                        $('.notice-message').text("Profile could not be saved");
+                        $('.result-message').text("Profile could not be saved");
+                    });
+               <% end %> 
+            };
+        }]);
+    </script>
 </html>
 
 
