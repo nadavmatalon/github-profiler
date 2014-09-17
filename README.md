@@ -62,19 +62,19 @@ and implements the following libraries/gems:
 
 For data storage the app uses a [PostgreSQL](http://www.postgresql.org) database.
 
-The app's search engine on the homepage enables all users (registered or 
-unregistered) to find profiles of [Github]() 
+Functionality-wise, __Github Profiler__ search engine enables all users (registered or 
+unregistered) to find profiles of [Github](http://www.github.com) 
 users by their username.
 
-Each profile can then be stored in the user's account for future reference (registered
+Each profile can then be __stored in the user's account__ for future reference (registered
 __Github Profiler__ users only). 
 
-The app will automatically load the personal profiles of registered users,
+The app will automatically load the __personal profiles__ of registered users,
 including extensive information about their repos, under their profile page
 (for this, users need to sign up with their [Github](http://www.github.com) 
 user name).
 
-Moreover, users can use their Github username and password to directly sign in to
+Moreover, users can use their Github username and password __to directly sign in__ to
 __Github Profiler__ thereby saving them the need to go through
 the registration process.
 
