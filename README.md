@@ -44,26 +44,38 @@
 
 ##General Description
 
-<p><strong>Github Profiler</strong> is a web app for browsing and storing profiles of 
-<a href="http://www.github.com">Github</a> users.</p>
+__Github Profiler__ is a web app for browsing and storing profiles of 
+[Github](http://www.github.com) users.
 
-<p>The app was built with Rails 4 and implements jQuery, Angular, Omniauth, Devise,
-Bootstrap. It uses a PostgreSQL database to store user data and was created 
-according to TDD (testing was done with Rspec & Capibara).
+The app was built with [Rails 4](http://rubyonrails.org) 
+according to [TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
+(tests written with [Rspec](http://rspec.info) 
+&amp; [Capibara](https://github.com/jnicklas/capybara)), 
+and implements 
+[jQuery](http://jquery.com), 
+[Angular](https://angularjs.org), 
+[Omniauth2](https://github.com/intridea/omniauth), 
+[Devise](https://github.com/plataformatec/devise),
+[Bootstrap](http://getbootstrap.com),
+and [Octokit](https://github.com/octokit/octokit.rb)
 
-<p>The app's search engine on the homepage enables all users (registered or 
-unregistered) to find profiles of Github users by their username.</p>
+For data storage the app uses a [PostgreSQL](http://www.postgresql.org) database.
 
-<p>Each profile can then be stored in the user's account for future reference (registered
-<strong>Github Profiler</strong> users only).</p> 
+The app's search engine on the homepage enables all users (registered or 
+unregistered) to find profiles of [Github]() 
+users by their username.
 
-<p>The app will automatically load the personal profiles of registered users,
+Each profile can then be stored in the user's account for future reference (registered
+__Github Profiler__ users only). 
+
+The app will automatically load the personal profiles of registered users,
 including extensive information about their repos, under their profile page
-(for this, users need to sign up with their Github user name).</p>
+(for this, users need to sign up with their [Github](http://www.github.com) 
+user name).
 
-<p>Moreover, users can use their Github username and password to directly sign in to
-<strong>Github Profiler</strong> thereby saving them the need to go through
-the registration process.</p>
+Moreover, users can use their Github username and password to directly sign in to
+__Github Profiler__ thereby saving them the need to go through
+the registration process.
 
 __Update 4.9.14:__ Added an Ajax-based popup window to display 'Connecting to Github' 
 message + spinner while Github Profiles are being loaded.
@@ -73,10 +85,11 @@ message + spinner while Github Profiles are being loaded.
 
 A live version of the app can be found at:
 
-http://github-profiler.herokuapp.com
+[Github-Profiler on Heroku](http://github-profiler.herokuapp.com)
 
 As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
 (Heroku's giros take time to wake up...), so please be patient.
+
 
 ##Browsers
 
@@ -93,14 +106,16 @@ when clicking on the 'Github Profile' button in the navigation bar.
 
 ##  Testing
 
-Tests were written with Rspec (3.0.2) & Capybara (2.4.1)
+Tests were written with [Rspec](http://rspec.info) (3.0.2) &amp; 
+[Capybara](https://github.com/jnicklas/capybara) (2.4.1).
 
 The tests cover both back-end logic and front-end functionality.
 
 To run the tests in terminal: 
 
 ```bash
-$ rspec
+$> cd github-profiler
+$> rspec
 ```
 
 ##  License
