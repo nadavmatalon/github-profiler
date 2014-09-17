@@ -86,7 +86,7 @@ message + spinner while Github Profiles are being loaded.
 
 A live version of the app can be found at:
 
-[Github-Profiler on Heroku](http://github-profiler.herokuapp.com)
+[Github Profiler on Heroku](http://github-profiler.herokuapp.com)
 
 As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
 (Heroku's giros take time to wake up...), so please be patient.
