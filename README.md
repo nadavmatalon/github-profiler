@@ -78,7 +78,7 @@ Moreover, users can use their Github username and password __to directly sign in
 __Github Profiler__ thereby saving them the need to go through
 the registration process.
 
-__Update 4.9.14:__ Added an Ajax-based popup window to display 'Connecting to Github' 
+__Update (4.9.14):__ Added an Ajax-based popup window to display 'Connecting to Github' 
 message + spinner while Github Profiles are being loaded.
 
 
