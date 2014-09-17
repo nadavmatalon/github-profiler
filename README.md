@@ -51,13 +51,14 @@ The app was built with [Rails 4](http://rubyonrails.org)
 according to [TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
 (tests written with [Rspec](http://rspec.info) 
 &amp; [Capibara](https://github.com/jnicklas/capybara)), 
-and implements 
-[jQuery](http://jquery.com), 
-[Angular](https://angularjs.org), 
-[Omniauth2](https://github.com/intridea/omniauth), 
-[Devise](https://github.com/plataformatec/devise),
-[Bootstrap](http://getbootstrap.com),
-and [Octokit](https://github.com/octokit/octokit.rb)
+and implements the following libraries/gems:
+
+* [jQuery](http://jquery.com)
+* [Angular](https://angularjs.org)
+* [Omniauth2](https://github.com/intridea/omniauth)
+* [Devise](https://github.com/plataformatec/devise)
+* [Bootstrap](http://getbootstrap.com)
+* [Octokit](https://github.com/octokit/octokit.rb)
 
 For data storage the app uses a [PostgreSQL](http://www.postgresql.org) database.
 
