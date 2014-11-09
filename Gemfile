@@ -14,56 +14,40 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 # Use unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 # https://github.com/plataformatec/devise
 gem 'devise'
-
 # https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass'
-
 # https://github.com/ai/autoprefixer-rails
 gem "autoprefixer-rails"
-
 # https://github.com/sstephenson/sprockets
 gem 'sprockets'
-
 # https://github.com/alexpeattie/heroku_secrets
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
-
 # https://github.com/websocket-rails/websocket-rails
 gem 'websocket-rails'
-
 # https://github.com/macournoyer/thin/
-gem 'thin'
-
+gem 'thin', "1.6.2"
 # https://github.com/intridea/omniauth
 gem 'omniauth'
-
 # https://github.com/intridea/omniauth-github
 gem 'omniauth-github'
-
 # https://github.com/aws/aws-sdk-ruby
 gem 'aws-sdk'
-
 # https://github.com/octokit/octokit.rb#hypermedia-agent
 gem "octokit", "~> 3.0"
-
 # https://github.com/mkdynamic/omniauth-facebook
 # gem 'omniauth-facebook'
 
@@ -81,7 +65,7 @@ group :test, :development do
     # https://github.com/rspec/rspec-rails
     gem 'rspec-rails'
     # https://github.com/jnicklas/capybara
-    gem 'capybara'
+    gem 'capybara', "2.4.1"
     # https://github.com/cldwalker/debugger
     gem 'debugger'
     # https://github.com/copiousfreetime/launchy
