@@ -2,11 +2,11 @@ describe "Sign up page" do
 
 	subject { page }
 
-    before (:each) { visit new_user_registration_path }
+	before (:each) { visit new_user_registration_path }
 
-   	it "should have page title \'Github Profiler | Sign Up\'" do
-        should have_title("Github Profiler | Sign Up")
-    end
+	it "should have page title \'Github Profiler | Sign Up\'" do
+		should have_title("Github Profiler | Sign Up")
+	end
 
 	it "should have the content \'GITHUB PROFILER\'" do
 		should have_content "GITHUB PROFILER"
@@ -48,6 +48,4 @@ describe "Sign up page" do
 		should have_button "Sign up"
 	end
 end
-
-
 
