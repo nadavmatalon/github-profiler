@@ -4,7 +4,7 @@ describe "Sign up page" do
 
     before (:each) { visit new_user_registration_path }
 
-   it "should have page title \'Github Profiler | Sign Up\'" do
+   	it "should have page title \'Github Profiler | Sign Up\'" do
         should have_title("Github Profiler | Sign Up")
     end
 

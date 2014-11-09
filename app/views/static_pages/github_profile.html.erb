@@ -4,8 +4,8 @@
 
 	<h2 class="page-title">Github Profile</h2>
 	
-		<% client = Octokit::Client.new(access_token: Rails.application.secrets.github_api_token) %>
-		<% begin @user = client.user current_user.username rescue @user = nil end %>
+	<% client = Octokit::Client.new(access_token: Rails.application.secrets.github_api_token) %>
+	<% begin @user = client.user current_user.username rescue @user = nil end %>
 
 	<div class="my-profile-main-container">
 	    <div class="git-profile-avatar">

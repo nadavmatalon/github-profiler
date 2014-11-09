@@ -5,7 +5,7 @@ describe "Home page" do
 
     before (:each) { visit root_path }
 
-  it "should have page title \'Github Profiler | Home\'" do
+	it "should have page title \'Github Profiler | Home\'" do
         should have_title("Github Profiler | Home")
     end
 

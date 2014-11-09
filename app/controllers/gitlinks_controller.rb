@@ -1,10 +1,4 @@
 class GitlinksController < ApplicationController
-# class GitlinksController < ActionController::Base
-
-	# def new
- #    	@current_user = current_user
- #    	@gitlink = Gitlink.new
- #  	end
 
 	def index
     	@gitlinks = Gitlink.all

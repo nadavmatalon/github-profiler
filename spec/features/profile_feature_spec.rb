@@ -9,7 +9,7 @@ describe "Profile page" do
 			click_link "Profile"
 		end
 
-	   it "should have page title \'Github Profiler | Profile\'" do
+	   	it "should have page title \'Github Profiler | Profile\'" do
 	        should have_title("Github Profiler | Profile")
 	    end
 
