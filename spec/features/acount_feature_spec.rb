@@ -2,14 +2,14 @@ describe "Account page" do
 
 	subject { page }
 
-    before (:each) do
-    	sign_up
-    	visit edit_user_registration_path
-    end
+	before (:each) do
+		sign_up
+		visit edit_user_registration_path
+	end
 
-   	it "should have page title \'Github Profiler | Account\'" do
-        should have_title "Github Profiler | Account"
-    end
+	it "should have page title \'Github Profiler | Account\'" do
+		should have_title "Github Profiler | Account"
+	end
 
 	it "should have the content \'GITHUB PROFILER\'" do
 		should have_content "GITHUB PROFILER"
@@ -56,14 +56,13 @@ describe "Account page" do
 	end
 end
 
-def sign_up(username = "test_user", password = "password", 
-            password_confirmation = "password")
-    visit root_path
-    click_link "Sign up"
-    fill_in "user_username", with: username
-    fill_in "user_password", with: password
-    fill_in "user_password_confirmation", with: password_confirmation
-    click_button "Sign up"
+def sign_up(username = "test_user", password = "password",
+			password_confirmation = "password")
+	visit root_path
+	click_link "Sign up"
+	fill_in "user_username", with: username
+	fill_in "user_password", with: password
+	fill_in "user_password_confirmation", with: password_confirmation
+	click_button "Sign up"
 end
-
 
