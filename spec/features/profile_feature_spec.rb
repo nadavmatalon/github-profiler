@@ -9,9 +9,9 @@ describe "Profile page" do
 			click_link "Profile"
 		end
 
-	   	it "should have page title \'Github Profiler | Profile\'" do
-	        should have_title("Github Profiler | Profile")
-	    end
+		it "should have page title \'Github Profiler | Profile\'" do
+			should have_title("Github Profiler | Profile")
+		end
 
 		it "should have the content \'GITHUB PROFILER\'" do
 			should have_content "GITHUB PROFILER"
@@ -40,7 +40,7 @@ describe "Profile page" do
 
 	context "Full Profile Details" do
 
-	    before (:each) do
+		before (:each) do
 			full_profile_sign_up
 			click_link "Profile"
 		end
@@ -68,24 +68,24 @@ describe "Profile page" do
 end
 
 def minimal_profile_sign_up
-    visit root_path
-    click_link "Sign up"
-    fill_in "user_username", with: "test_username"
-    fill_in "user_password", with: "password"
-    fill_in "user_password_confirmation", with: "password"
-    click_button "Sign up"
+	visit root_path
+	click_link "Sign up"
+	fill_in "user_username", with: "test_username"
+	fill_in "user_password", with: "password"
+	fill_in "user_password_confirmation", with: "password"
+	click_button "Sign up"
 end
 
 def full_profile_sign_up
-    visit root_path
-    click_link "Sign up"
-    fill_in "user_username", with: "test_username"
-    fill_in "user_name", with: "test_user"
-    fill_in "user_location", with: "test_location"
-    fill_in "user_email", with: "username@email.com"
-    fill_in "user_url", with: "http://user_website.com"
-    fill_in "user_password", with: "password"
-    fill_in "user_password_confirmation", with: "password"
-    click_button "Sign up"
+	visit root_path
+	click_link "Sign up"
+	fill_in "user_username", with: "test_username"
+	fill_in "user_name", with: "test_user"
+	fill_in "user_location", with: "test_location"
+	fill_in "user_email", with: "username@email.com"
+	fill_in "user_url", with: "http://user_website.com"
+	fill_in "user_password", with: "password"
+	fill_in "user_password_confirmation", with: "password"
+	click_button "Sign up"
 end
 
