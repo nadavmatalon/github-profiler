@@ -2,11 +2,11 @@ describe "Contact page" do
 
 	subject { page }
 
-    before (:each) { visit contact_path }
+	before (:each) { visit contact_path }
 
-  	it "should have page title \'Github Profiler | Contact\'" do
-        should have_title "Github Profiler | Contact"
-    end
+	it "should have page title \'Github Profiler | Contact\'" do
+		should have_title "Github Profiler | Contact"
+	end
 
 	it "should have the content \'GITHUB PROFILER\'" do
 		should have_content "GITHUB PROFILER"
