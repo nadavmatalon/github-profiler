@@ -1,24 +1,38 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
     def update
-
+        @user = User.find(current_user.id)
         account_update_params = devise_parameter_sanitizer.sanitize(:account_update)
+        check_params
+        update_user_attributes
+    end
 
-        if account_update_params[:password].blank?      
+    def check_params
+        check_password_params
+        check_email_params
+        check_current_password
+    end
+
+    def check_password_params
+        if account_update_params[:password].blank?
             account_update_params.delete("password")
             account_update_params.delete("password_confirmation")
         end
+    end
 
-        if account_update_params[:email].blank?      
+    def check_email_params
+        if account_update_params[:email].blank?
             account_update_params.delete("email")
         end
+    end
 
-        if account_update_params[:current_password].blank?      
+    def check_current_password
+        if account_update_params[:current_password].blank?
             account_update_params.delete("current_password")
         end
+    end
 
-        @user = User.find(current_user.id)
-
+    def update_user_attributes
         if @user.update_attributes(account_update_params)
             set_flash_message :notice, :updated
             sign_in @user, bypass: true
@@ -26,7 +40,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
         else
             render "edit"
         end
-
     end
 end
 
