@@ -1,5 +1,7 @@
 #GITHUB PROFILER 
 
+[![Code Climate](https://codeclimate.com/github/nadavmatalon/github-profiler/badges/gpa.svg)](https://codeclimate.com/github/nadavmatalon/github-profiler)
+
 ##Table of Contents
 
 * [Screenshots](#screenshots)
@@ -44,8 +46,10 @@
 
 ##General Description
 
-__Github Profiler__ is a web app for browsing and storing profiles of 
-[Github](http://www.github.com) users.
+__Github Profiler__ is a [Ruby on Rails](http://rubyonrails.org/) 
+app for browsing and storing profiles of 
+[Github](http://www.github.com) users written during week 7 of the 
+course at [Makers Academy](http://www.makersacademy.com/).
 
 The app was built with [Rails 4](http://rubyonrails.org) 
 according to [TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
@@ -62,9 +66,9 @@ and implements the following libraries/gems:
 
 For data storage the app uses a [PostgreSQL](http://www.postgresql.org) database.
 
-Functionality-wise, __Github Profiler__ search engine enables all users (registered or 
-unregistered) to find profiles of [Github](http://www.github.com) 
-users by their username.
+In terms of functionality, __Github Profiler__ search engine enables all 
+users (registered or unregistered) to find profiles of 
+[Github](http://www.github.com) users by their username.
 
 Each profile can then be __stored in the user's account__ for future reference (registered
 __Github Profiler__ users only). 
@@ -78,8 +82,8 @@ Moreover, users can use their Github username and password __to directly sign in
 __Github Profiler__ thereby saving them the need to go through
 the registration process.
 
-__Update (4.9.14):__ Added an Ajax-based popup window to display 'Connecting to Github' 
-message + spinner while Github Profiles are being loaded.
+__Update (4.9.14):__ Added an [jQuery](http://jquery.com/) popup window to 
+display a 'Connecting to Github' message + spinner while Github Profiles are being loaded.
 
 
 ##See it Live on Heroku
