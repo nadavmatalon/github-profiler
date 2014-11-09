@@ -7,6 +7,7 @@
 * [Screenshots](#screenshots)
 * [General Description](#general-description)
 * [See it Live on Heroku](#see-it-live-on-heroku)
+* [How to Install](#how-to-install)
 * [Browsers](#browsers)
 * [Testing](#testing)
 * [License](#license)
@@ -96,6 +97,26 @@ As I'm using Heroku's free hosting service, the app may take a bit of time to up
 (Heroku's giros take time to wake up...), so please be patient.
 
 
+##How To Install
+
+To install the app locally, clone the repo to a local folder and run: 
+
+```bash
+$> cd github-profiler
+$> bundle install
+$> bin/rake db:migrate 
+$> bin/rake db:migrate RAILS_ENV=test
+$> bin/rake db:migrate
+$> rails server
+```
+
+Then open the browser of your choice and go to:
+
+```
+http://localhost:3000
+```
+
+
 ##Browsers
 
  This app has been tested with and supports the following browsers:
@@ -116,7 +137,7 @@ Tests were written with [Rspec](http://rspec.info) (3.0.2) &amp;
 
 The tests cover both back-end logic and front-end functionality.
 
-To run the tests in terminal: 
+To run the tests in terminal, clone the repo to a local folder and then: 
 
 ```bash
 $> cd github-profiler
